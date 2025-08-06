@@ -594,6 +594,9 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      {/* WhatsApp Contact Button */}
+      <WhatsAppButton />
     </div>
   );
 }
