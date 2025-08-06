@@ -1,33 +1,40 @@
 import { useState } from "react";
-import { Star, MapPin, Calendar, Users, Phone, Mail, Globe, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Star, MapPin, Calendar, Users, Phone, Mail, Globe, Clock, ChevronDown } from "lucide-react";
+import { useLanguage, Language } from "@/hooks/useLanguage";
 
 export default function Index() {
-  const [activeTab, setActiveTab] = useState("tours");
+  const { language, setLanguage, t } = useLanguage();
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
   const tourPackages = [
     {
-      title: "CITY TOUR",
-      duration: "2h 30 + tours",
+      id: 'city-tour',
+      title: t('tours.cityTour'),
+      duration: "2h 30min + tours",
       price: "35€",
       image: "https://images.unsplash.com/photo-1539650116574-75c0c6d0d66e?w=300&h=200&fit=crop",
       category: "Cultural"
     },
     {
-      title: "ATLAS ADVENTURE", 
+      id: 'atlas-adventure',
+      title: t('tours.atlasAdventure'), 
       duration: "1 Day + Tours",
       price: "85€",
       image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=200&fit=crop",
       category: "Adventure"
     },
     {
-      title: "BEACH CRUISE",
+      id: 'beach-cruise',
+      title: t('tours.beachCruise'),
       duration: "3h + Tours",
       price: "45€", 
       image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=300&h=200&fit=crop",
       category: "Relaxation"
     },
     {
-      title: "WINE TOUR",
+      id: 'wine-tour',
+      title: t('tours.wineTour'),
       duration: "4h + Tours",
       price: "65€",
       image: "https://images.unsplash.com/photo-1506453831428-d8f24972c0d4?w=300&h=200&fit=crop",
@@ -37,35 +44,35 @@ export default function Index() {
 
   const destinations = [
     {
-      name: "CASABLANCA",
-      subtitle: "Economic Capital",
-      spots: "8 SPOTS",
+      name: t('dest.casablanca'),
+      subtitle: t('dest.casablancaSub'),
+      spots: `8 ${t('common.spots')}`,
       services: "4 SERVICES",
-      price: "ONLY €199",
+      price: `${t('common.only')} €199`,
       image: "https://images.unsplash.com/photo-1539650116574-75c0c6d0d66e?w=250&h=300&fit=crop"
     },
     {
-      name: "MEKNAISSA", 
-      subtitle: "Imperial City",
-      spots: "6 SPOTS",
+      name: t('dest.meknaissa'), 
+      subtitle: t('dest.meknassaSub'),
+      spots: `6 ${t('common.spots')}`,
       services: "5 SERVICES", 
-      price: "ONLY €179",
+      price: `${t('common.only')} €179`,
       image: "https://images.unsplash.com/photo-1573160103600-9b02b2b6c048?w=250&h=300&fit=crop"
     },
     {
-      name: "OUARZAZATE",
-      subtitle: "Gateway to Sahara",
-      spots: "4 SPOTS",
+      name: t('dest.ouarzazate'),
+      subtitle: t('dest.ouarzazateSub'),
+      spots: `4 ${t('common.spots')}`,
       services: "3 SERVICES", 
-      price: "ONLY €249",
+      price: `${t('common.only')} €249`,
       image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=250&h=300&fit=crop"
     },
     {
-      name: "AGADIR",
-      subtitle: "Beach Paradise",
-      spots: "5 SPOTS",
+      name: t('dest.agadir'),
+      subtitle: t('dest.agadirSub'),
+      spots: `5 ${t('common.spots')}`,
       services: "6 SERVICES",
-      price: "ONLY €159",
+      price: `${t('common.only')} €159`,
       image: "https://images.unsplash.com/photo-1558618666-e0c7b5f5f0d6?w=250&h=300&fit=crop"
     }
   ];
@@ -81,6 +88,12 @@ export default function Index() {
     }
   ];
 
+  const languages: { code: Language; name: string; flag: string }[] = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -88,14 +101,46 @@ export default function Index() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold text-morocco-brown">MAROC</div>
           <div className="hidden md:flex space-x-8">
-            <a href="#tours" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">Tours</a>
-            <a href="#destinations" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">Destinations</a>
-            <a href="#about" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">About</a>
-            <a href="#contact" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">Contact</a>
+            <a href="#tours" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">{t('nav.tours')}</a>
+            <a href="#destinations" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">{t('nav.destinations')}</a>
+            <a href="#about" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">{t('nav.about')}</a>
+            <a href="#contact" className="text-gray-700 hover:text-morocco-orange transition-colors font-medium">{t('nav.contact')}</a>
           </div>
-          <button className="bg-morocco-orange text-white px-6 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors font-medium">
-            Book Now
-          </button>
+          <div className="flex items-center space-x-4">
+            {/* Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className="flex items-center space-x-2 text-gray-700 hover:text-morocco-orange transition-colors"
+              >
+                <span>{languages.find(lang => lang.code === language)?.flag}</span>
+                <span className="hidden sm:inline">{languages.find(lang => lang.code === language)?.name}</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              {showLanguageMenu && (
+                <div className="absolute right-0 mt-2 py-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setShowLanguageMenu(false);
+                      }}
+                      className={`w-full text-left px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 ${
+                        language === lang.code ? 'bg-morocco-orange text-white' : 'text-gray-700'
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button className="bg-morocco-orange text-white px-6 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors font-medium">
+              {t('nav.bookNow')}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -108,13 +153,12 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-lg">
-            <h1 className="text-8xl font-black mb-6 leading-none tracking-wide">MAROC</h1>
+            <h1 className="text-8xl font-black mb-6 leading-none tracking-wide">{t('hero.title')}</h1>
             <p className="text-xl mb-8 text-white/90 leading-relaxed">
-              Discover the authentic beauty of Morocco through our carefully curated experiences. 
-              From ancient medinas to vast desert landscapes.
+              {t('hero.subtitle')}
             </p>
             <button className="bg-morocco-orange text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-morocco-orange-dark transition-colors shadow-lg">
-              Explore Adventures
+              {t('hero.cta')}
             </button>
           </div>
         </div>
@@ -140,9 +184,12 @@ export default function Index() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-morocco-orange">{tour.price}</span>
-                    <button className="bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium">
-                      Book Now
-                    </button>
+                    <Link 
+                      to={`/booking/${tour.id}`}
+                      className="bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium"
+                    >
+                      {t('nav.bookNow')}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -164,12 +211,10 @@ export default function Index() {
             </div>
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
-                We create the<br />trips you love
+                {t('section.createTrips')}
               </h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                With passionate locals. Click "Edit Tour" to customize the 
-                tour and experience. This Moroccan experience has 
-                reviews, so let us know if you have questions!
+                {t('section.createTripsDesc')}
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -212,12 +257,10 @@ export default function Index() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
-                  Awesome<br />country
+                  {t('section.awesomeCountry')}
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Amazing country tour for its natural side 
-                  of culture and local experience and 
-                  lifestyle that the Sun Do Rift.
+                  {t('section.awesomeCountryDesc')}
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-6">
@@ -258,7 +301,7 @@ export default function Index() {
             {/* Left Side - Quote */}
             <div className="lg:w-1/3 space-y-6">
               <div className="bg-morocco-orange text-white p-6 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">EXPLORE ALL TOURS</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('section.exploreAllTours')}</h3>
                 <p className="text-orange-100">
                   Discover Morocco's hidden gems and iconic destinations through our carefully curated tour experiences.
                 </p>
@@ -299,7 +342,7 @@ export default function Index() {
                       <div className="flex justify-between items-center">
                         <span className="text-lg font-bold text-morocco-orange">{dest.price}</span>
                         <button className="bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium">
-                          Book Now
+                          {t('nav.bookNow')}
                         </button>
                       </div>
                     </div>
@@ -315,7 +358,7 @@ export default function Index() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">FAQS</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">{t('faq.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-6">
                 {faqs.map((faq, index) => (
@@ -352,13 +395,12 @@ export default function Index() {
           style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop')` }}
         ></div>
         <div className="relative container mx-auto px-4 text-center">
-          <h2 className="text-5xl font-bold mb-6">Tailor Made Trip</h2>
+          <h2 className="text-5xl font-bold mb-6">{t('section.tailorMadeTrip')}</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Create your own unique Moroccan adventure. Custom experiences 
-            tailored to your interests, budget, and schedule.
+            {t('section.tailorMadeTripDesc')}
           </p>
           <button className="bg-white text-morocco-orange px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
-            Contact Us
+            {t('nav.contact')}
           </button>
         </div>
       </section>
@@ -386,7 +428,7 @@ export default function Index() {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">Business Hours</h4>
+              <h4 className="text-lg font-semibold mb-4">{t('footer.businessHours')}</h4>
               <div className="space-y-2 text-gray-400">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 4:00 PM</p>
@@ -395,7 +437,7 @@ export default function Index() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+              <h4 className="text-lg font-semibold mb-4">{t('footer.contactInfo')}</h4>
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-morocco-orange" />
@@ -413,7 +455,7 @@ export default function Index() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
+              <h4 className="text-lg font-semibold mb-4">{t('footer.newsletter')}</h4>
               <p className="text-gray-400 mb-4">
                 Subscribe for travel tips and exclusive offers
               </p>
@@ -424,7 +466,7 @@ export default function Index() {
                   className="flex-1 px-4 py-2 rounded-l-md text-gray-800 focus:outline-none"
                 />
                 <button className="bg-morocco-orange px-4 py-2 rounded-r-md hover:bg-morocco-orange-dark transition-colors">
-                  Subscribe
+                  {t('footer.subscribe')}
                 </button>
               </div>
             </div>
