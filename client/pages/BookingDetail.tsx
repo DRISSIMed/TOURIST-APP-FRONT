@@ -1,6 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Clock, Users, MapPin, Star, Check, Calendar, Phone, Mail } from "lucide-react";
+import {
+  ArrowLeft,
+  Clock,
+  Users,
+  MapPin,
+  Star,
+  Check,
+  Calendar,
+  Phone,
+  Mail,
+} from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 
 interface TourData {
@@ -17,94 +27,106 @@ interface TourData {
 }
 
 const tourData: { [key: string]: TourData } = {
-  'city-tour': {
-    id: 'city-tour',
-    title: 'City Tour',
-    duration: '2h 30min',
-    price: '35€',
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d0d66e?w=600&h=400&fit=crop',
-    category: 'Cultural',
-    description: 'Explore the historical heart of Morocco with our expert local guides',
+  "city-tour": {
+    id: "city-tour",
+    title: "City Tour",
+    duration: "2h 30min",
+    price: "35€",
+    image:
+      "https://images.unsplash.com/photo-1539650116574-75c0c6d0d66e?w=600&h=400&fit=crop",
+    category: "Cultural",
+    description:
+      "Explore the historical heart of Morocco with our expert local guides",
     includes: [
-      'Professional guide',
-      'Transportation',
-      'Entrance fees',
-      'Traditional tea'
+      "Professional guide",
+      "Transportation",
+      "Entrance fees",
+      "Traditional tea",
     ],
     highlights: [
-      'Historic Medina exploration',
-      'Traditional markets visit',
-      'Local artisan workshops',
-      'Authentic cultural experience'
+      "Historic Medina exploration",
+      "Traditional markets visit",
+      "Local artisan workshops",
+      "Authentic cultural experience",
     ],
-    fullDescription: 'Immerse yourself in the rich history and vibrant culture of Morocco with our comprehensive city tour. Walk through ancient medinas, discover hidden gems, and experience the authentic local lifestyle that has been preserved for centuries.'
+    fullDescription:
+      "Immerse yourself in the rich history and vibrant culture of Morocco with our comprehensive city tour. Walk through ancient medinas, discover hidden gems, and experience the authentic local lifestyle that has been preserved for centuries.",
   },
-  'atlas-adventure': {
-    id: 'atlas-adventure',
-    title: 'Atlas Adventure',
-    duration: '1 Full Day',
-    price: '85€',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
-    category: 'Adventure',
-    description: 'Discover the breathtaking Atlas Mountains with hiking and traditional villages',
+  "atlas-adventure": {
+    id: "atlas-adventure",
+    title: "Atlas Adventure",
+    duration: "1 Full Day",
+    price: "85€",
+    image:
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+    category: "Adventure",
+    description:
+      "Discover the breathtaking Atlas Mountains with hiking and traditional villages",
     includes: [
-      'Mountain guide',
-      '4WD transportation',
-      'Traditional lunch',
-      'Hiking equipment'
+      "Mountain guide",
+      "4WD transportation",
+      "Traditional lunch",
+      "Hiking equipment",
     ],
     highlights: [
-      'Atlas Mountains hiking',
-      'Berber villages visit',
-      'Panoramic mountain views',
-      'Traditional mountain lunch'
+      "Atlas Mountains hiking",
+      "Berber villages visit",
+      "Panoramic mountain views",
+      "Traditional mountain lunch",
     ],
-    fullDescription: 'Experience the majestic Atlas Mountains on this full-day adventure. Hike through scenic trails, visit traditional Berber villages, and enjoy breathtaking panoramic views while learning about the local mountain culture and lifestyle.'
+    fullDescription:
+      "Experience the majestic Atlas Mountains on this full-day adventure. Hike through scenic trails, visit traditional Berber villages, and enjoy breathtaking panoramic views while learning about the local mountain culture and lifestyle.",
   },
-  'beach-cruise': {
-    id: 'beach-cruise',
-    title: 'Beach Cruise',
-    duration: '3 hours',
-    price: '45€',
-    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop',
-    category: 'Relaxation',
-    description: 'Relax and enjoy the beautiful Moroccan coastline on our luxury cruise',
+  "beach-cruise": {
+    id: "beach-cruise",
+    title: "Beach Cruise",
+    duration: "3 hours",
+    price: "45€",
+    image:
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
+    category: "Relaxation",
+    description:
+      "Relax and enjoy the beautiful Moroccan coastline on our luxury cruise",
     includes: [
-      'Luxury boat cruise',
-      'Welcome drink',
-      'Fresh seafood lunch',
-      'Swimming opportunity'
+      "Luxury boat cruise",
+      "Welcome drink",
+      "Fresh seafood lunch",
+      "Swimming opportunity",
     ],
     highlights: [
-      'Scenic coastal views',
-      'Swimming and snorkeling',
-      'Fresh seafood experience',
-      'Sunset viewing'
+      "Scenic coastal views",
+      "Swimming and snorkeling",
+      "Fresh seafood experience",
+      "Sunset viewing",
     ],
-    fullDescription: 'Unwind on our luxurious beach cruise along Morocco\'s stunning coastline. Enjoy crystal-clear waters, fresh seafood, and spectacular sunset views while experiencing the peaceful side of Morocco.'
+    fullDescription:
+      "Unwind on our luxurious beach cruise along Morocco's stunning coastline. Enjoy crystal-clear waters, fresh seafood, and spectacular sunset views while experiencing the peaceful side of Morocco.",
   },
-  'wine-tour': {
-    id: 'wine-tour',
-    title: 'Wine Tour',
-    duration: '4 hours',
-    price: '65€',
-    image: 'https://images.unsplash.com/photo-1506453831428-d8f24972c0d4?w=600&h=400&fit=crop',
-    category: 'Culinary',
-    description: 'Taste the finest Moroccan wines and learn about local winemaking traditions',
+  "wine-tour": {
+    id: "wine-tour",
+    title: "Wine Tour",
+    duration: "4 hours",
+    price: "65€",
+    image:
+      "https://images.unsplash.com/photo-1506453831428-d8f24972c0d4?w=600&h=400&fit=crop",
+    category: "Culinary",
+    description:
+      "Taste the finest Moroccan wines and learn about local winemaking traditions",
     includes: [
-      'Wine tasting session',
-      'Vineyard tour',
-      'Cheese and tapas',
-      'Transportation'
+      "Wine tasting session",
+      "Vineyard tour",
+      "Cheese and tapas",
+      "Transportation",
     ],
     highlights: [
-      'Premium wine tasting',
-      'Vineyard exploration',
-      'Local cuisine pairing',
-      'Winemaking process tour'
+      "Premium wine tasting",
+      "Vineyard exploration",
+      "Local cuisine pairing",
+      "Winemaking process tour",
     ],
-    fullDescription: 'Discover Morocco\'s emerging wine culture with visits to local vineyards. Taste premium wines, learn about traditional and modern winemaking techniques, and enjoy perfectly paired local cuisine.'
-  }
+    fullDescription:
+      "Discover Morocco's emerging wine culture with visits to local vineyards. Taste premium wines, learn about traditional and modern winemaking techniques, and enjoy perfectly paired local cuisine.",
+  },
 };
 
 interface ReservationForm {
@@ -123,13 +145,13 @@ export default function BookingDetail() {
   const { t } = useLanguage();
   const [tour, setTour] = useState<TourData | null>(null);
   const [formData, setFormData] = useState<ReservationForm>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    checkInDate: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    checkInDate: "",
     guests: 1,
-    specialRequests: ''
+    specialRequests: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -137,37 +159,41 @@ export default function BookingDetail() {
     if (tourId && tourData[tourId]) {
       setTour(tourData[tourId]);
     } else {
-      navigate('/');
+      navigate("/");
     }
   }, [tourId, navigate]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: name === 'guests' ? parseInt(value) || 1 : value
+      [name]: name === "guests" ? parseInt(value) || 1 : value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    alert('Reservation submitted successfully! We will contact you soon.');
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    alert("Reservation submitted successfully! We will contact you soon.");
     setIsSubmitting(false);
-    
+
     // Reset form
     setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      checkInDate: '',
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      checkInDate: "",
       guests: 1,
-      specialRequests: ''
+      specialRequests: "",
     });
   };
 
@@ -182,20 +208,22 @@ export default function BookingDetail() {
     );
   }
 
-  const totalPrice = parseFloat(tour.price.replace('€', '')) * formData.guests;
+  const totalPrice = parseFloat(tour.price.replace("€", "")) * formData.guests;
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-morocco-brown">MAROC</Link>
-          <Link 
+          <Link to="/" className="text-2xl font-bold text-morocco-brown">
+            MAROC
+          </Link>
+          <Link
             to="/"
             className="flex items-center space-x-2 text-gray-600 hover:text-morocco-orange transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>{t('booking.backToTours')}</span>
+            <span>{t("booking.backToTours")}</span>
           </Link>
         </div>
       </nav>
@@ -205,24 +233,30 @@ export default function BookingDetail() {
           {/* Tour Details */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
+              <img
                 src={tour.image}
                 alt={tour.title}
                 className="w-full h-64 object-cover"
               />
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h1 className="text-3xl font-bold text-gray-800">{tour.title}</h1>
-                  <span className="text-3xl font-bold text-morocco-orange">{tour.price}</span>
+                  <h1 className="text-3xl font-bold text-gray-800">
+                    {tour.title}
+                  </h1>
+                  <span className="text-3xl font-bold text-morocco-orange">
+                    {tour.price}
+                  </span>
                 </div>
-                
+
                 <p className="text-gray-600 mb-6">{tour.description}</p>
-                
+
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center space-x-2">
                     <Clock className="w-5 h-5 text-morocco-orange" />
                     <div>
-                      <p className="text-sm text-gray-500">{t('booking.duration')}</p>
+                      <p className="text-sm text-gray-500">
+                        {t("booking.duration")}
+                      </p>
                       <p className="font-semibold">{tour.duration}</p>
                     </div>
                   </div>
@@ -236,7 +270,9 @@ export default function BookingDetail() {
                 </div>
 
                 <div className="border-t pt-6">
-                  <h3 className="text-xl font-semibold mb-4">{t('booking.includes')}</h3>
+                  <h3 className="text-xl font-semibold mb-4">
+                    {t("booking.includes")}
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {tour.includes.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -260,8 +296,12 @@ export default function BookingDetail() {
                 </div>
 
                 <div className="border-t pt-6 mt-6">
-                  <h3 className="text-xl font-semibold mb-4">Full Description</h3>
-                  <p className="text-gray-700 leading-relaxed">{tour.fullDescription}</p>
+                  <h3 className="text-xl font-semibold mb-4">
+                    Full Description
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {tour.fullDescription}
+                  </p>
                 </div>
               </div>
             </div>
@@ -270,16 +310,20 @@ export default function BookingDetail() {
           {/* Reservation Form */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('booking.reservationForm')}</h2>
-              
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                {t("booking.reservationForm")}
+              </h2>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('booking.personalInfo')}</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                    {t("booking.personalInfo")}
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('booking.firstName')} *
+                        {t("booking.firstName")} *
                       </label>
                       <input
                         type="text"
@@ -292,7 +336,7 @@ export default function BookingDetail() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {t('booking.lastName')} *
+                        {t("booking.lastName")} *
                       </label>
                       <input
                         type="text"
@@ -310,7 +354,7 @@ export default function BookingDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('booking.email')} *
+                      {t("booking.email")} *
                     </label>
                     <input
                       type="email"
@@ -323,7 +367,7 @@ export default function BookingDetail() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('booking.phone')} *
+                      {t("booking.phone")} *
                     </label>
                     <input
                       type="tel"
@@ -340,7 +384,7 @@ export default function BookingDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('booking.checkIn')} *
+                      {t("booking.checkIn")} *
                     </label>
                     <input
                       type="date"
@@ -348,13 +392,13 @@ export default function BookingDetail() {
                       required
                       value={formData.checkInDate}
                       onChange={handleInputChange}
-                      min={new Date().toISOString().split('T')[0]}
+                      min={new Date().toISOString().split("T")[0]}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-morocco-orange focus:border-transparent"
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {t('booking.guests')} *
+                      {t("booking.guests")} *
                     </label>
                     <select
                       name="guests"
@@ -362,8 +406,10 @@ export default function BookingDetail() {
                       onChange={handleInputChange}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-morocco-orange focus:border-transparent"
                     >
-                      {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                        <option key={num} value={num}>{num} {num === 1 ? 'Guest' : 'Guests'}</option>
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                        <option key={num} value={num}>
+                          {num} {num === 1 ? "Guest" : "Guests"}
+                        </option>
                       ))}
                     </select>
                   </div>
@@ -372,7 +418,7 @@ export default function BookingDetail() {
                 {/* Special Requests */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('booking.specialRequests')}
+                    {t("booking.specialRequests")}
                   </label>
                   <textarea
                     name="specialRequests"
@@ -387,7 +433,9 @@ export default function BookingDetail() {
                 {/* Price Summary */}
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-700">Tour Price ({formData.guests} guests)</span>
+                    <span className="text-gray-700">
+                      Tour Price ({formData.guests} guests)
+                    </span>
                     <span className="font-semibold">€{totalPrice}</span>
                   </div>
                   <div className="flex justify-between items-center text-lg font-bold text-morocco-orange">
@@ -408,7 +456,7 @@ export default function BookingDetail() {
                       <span>Processing...</span>
                     </div>
                   ) : (
-                    t('booking.confirmReservation')
+                    t("booking.confirmReservation")
                   )}
                 </button>
               </form>
@@ -416,7 +464,9 @@ export default function BookingDetail() {
 
             {/* Contact Info */}
             <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Need Help?</h3>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                Need Help?
+              </h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-morocco-orange" />
