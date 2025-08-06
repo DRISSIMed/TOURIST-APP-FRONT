@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        morocco: {
+          orange: "hsl(var(--morocco-orange))",
+          "orange-dark": "hsl(var(--morocco-orange-dark))",
+          sand: "hsl(var(--morocco-sand))",
+          brown: "hsl(var(--morocco-brown))",
+          gold: "hsl(var(--morocco-gold))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
