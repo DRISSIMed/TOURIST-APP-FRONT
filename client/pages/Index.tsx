@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useLanguage, Language } from "@/hooks/useLanguage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { quickBookingViaWhatsApp } from "@/services/emailService";
 
 export default function Index() {
   const { language, setLanguage, t } = useLanguage();
