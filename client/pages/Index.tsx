@@ -239,16 +239,25 @@ export default function Index() {
                     <Clock className="w-4 h-4 mr-2" />
                     <span className="text-sm">{tour.duration}</span>
                   </div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="text-xl font-bold text-morocco-orange">
                       {tour.price}
                     </span>
+                  </div>
+                  <div className="flex gap-2">
                     <Link
                       to={`/booking/${tour.id}`}
-                      className="bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium"
+                      className="flex-1 bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium text-center"
                     >
                       {t("nav.bookNow")}
                     </Link>
+                    <button
+                      onClick={() => quickBookingViaWhatsApp(tour.title)}
+                      className="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-600 transition-colors text-sm font-medium"
+                      title="Quick booking via WhatsApp"
+                    >
+                      📱
+                    </button>
                   </div>
                 </div>
               </div>
