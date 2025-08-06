@@ -20,5 +20,9 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // Email notification routes
+  app.post("/api/send-booking-notification", handleBookingNotification);
+  app.post("/api/send-booking-confirmation", handleBookingConfirmation);
+
   return app;
 }
