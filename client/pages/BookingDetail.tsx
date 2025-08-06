@@ -185,22 +185,63 @@ export default function BookingDetail() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const bookingData = {
+        tourName: tour!.title,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        checkInDate: formData.checkInDate,
+        guests: formData.guests,
+        specialRequests: formData.specialRequests,
+        totalPrice: totalPrice
+      };
 
-    alert("Reservation submitted successfully! We will contact you soon.");
-    setIsSubmitting(false);
+      // Send notification to admin via email
+      const emailSent = await sendBookingNotificationEmail(bookingData);
 
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      checkInDate: "",
-      guests: 1,
-      specialRequests: "",
-    });
+      // Send confirmation email to customer
+      const confirmationSent = await sendBookingConfirmationEmail(bookingData);
+
+      if (emailSent) {
+        // Also send WhatsApp message to admin
+        sendBookingWhatsAppMessage(bookingData);
+
+        alert(
+          "Reservation submitted successfully! " +
+          "We have sent you a confirmation email and will contact you within 24 hours. " +
+          "You can also contact us directly via WhatsApp if you have any questions."
+        );
+      } else {
+        // If email fails, still send WhatsApp message
+        sendBookingWhatsAppMessage(bookingData);
+        alert(
+          "Reservation submitted! We will contact you soon via WhatsApp or phone. " +
+          "Please check your email for confirmation."
+        );
+      }
+
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        checkInDate: "",
+        guests: 1,
+        specialRequests: "",
+      });
+
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      alert(
+        "There was an issue submitting your reservation. " +
+        "Please try again or contact us directly via WhatsApp."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!tour) {
