@@ -12,6 +12,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 interface TourData {
   id: string;
