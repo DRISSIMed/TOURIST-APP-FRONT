@@ -13,6 +13,11 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import {
+  sendBookingNotificationEmail,
+  sendBookingWhatsAppMessage,
+  sendBookingConfirmationEmail
+} from "@/services/emailService";
 
 interface TourData {
   id: string;
