@@ -435,12 +435,21 @@ export default function Index() {
                           />
                         ))}
                       </div>
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center mb-3">
                         <span className="text-lg font-bold text-morocco-orange">
                           {dest.price}
                         </span>
-                        <button className="bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium">
+                      </div>
+                      <div className="flex gap-2">
+                        <button className="flex-1 bg-morocco-orange text-white px-4 py-2 rounded-md hover:bg-morocco-orange-dark transition-colors text-sm font-medium">
                           {t("nav.bookNow")}
+                        </button>
+                        <button
+                          onClick={() => quickBookingViaWhatsApp(`${dest.name} Tour`)}
+                          className="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-600 transition-colors text-sm font-medium"
+                          title="Quick booking via WhatsApp"
+                        >
+                          📱
                         </button>
                       </div>
                     </div>
