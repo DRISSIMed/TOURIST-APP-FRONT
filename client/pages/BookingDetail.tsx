@@ -16,7 +16,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import {
   sendBookingNotificationEmail,
   sendBookingWhatsAppMessage,
-  sendBookingConfirmationEmail
+  sendBookingConfirmationEmail,
 } from "@/services/emailService";
 
 interface TourData {
@@ -195,7 +195,7 @@ export default function BookingDetail() {
         checkInDate: formData.checkInDate,
         guests: formData.guests,
         specialRequests: formData.specialRequests,
-        totalPrice: totalPrice
+        totalPrice: totalPrice,
       };
 
       // Send notification to admin via email
@@ -210,15 +210,15 @@ export default function BookingDetail() {
 
         alert(
           "Reservation submitted successfully! " +
-          "We have sent you a confirmation email and will contact you within 24 hours. " +
-          "You can also contact us directly via WhatsApp if you have any questions."
+            "We have sent you a confirmation email and will contact you within 24 hours. " +
+            "You can also contact us directly via WhatsApp if you have any questions.",
         );
       } else {
         // If email fails, still send WhatsApp message
         sendBookingWhatsAppMessage(bookingData);
         alert(
           "Reservation submitted! We will contact you soon via WhatsApp or phone. " +
-          "Please check your email for confirmation."
+            "Please check your email for confirmation.",
         );
       }
 
@@ -232,12 +232,11 @@ export default function BookingDetail() {
         guests: 1,
         specialRequests: "",
       });
-
     } catch (error) {
-      console.error('Error submitting booking:', error);
+      console.error("Error submitting booking:", error);
       alert(
         "There was an issue submitting your reservation. " +
-        "Please try again or contact us directly via WhatsApp."
+          "Please try again or contact us directly via WhatsApp.",
       );
     } finally {
       setIsSubmitting(false);

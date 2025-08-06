@@ -15,17 +15,19 @@ interface BookingData {
 
 // Configuration for email service
 const EMAIL_CONFIG = {
-  adminEmail: 'admin@maroctravel.com',
-  adminWhatsApp: '+212123456789',
-  companyName: 'Maroc Travel'
+  adminEmail: "admin@maroctravel.com",
+  adminWhatsApp: "+212123456789",
+  companyName: "Maroc Travel",
 };
 
 // Send email notification to admin using EmailJS
-export async function sendBookingNotificationEmail(bookingData: BookingData): Promise<boolean> {
+export async function sendBookingNotificationEmail(
+  bookingData: BookingData,
+): Promise<boolean> {
   try {
     // EmailJS configuration (you need to set up EmailJS account)
     // This is a placeholder implementation
-    
+
     const emailTemplate = {
       to_email: EMAIL_CONFIG.adminEmail,
       subject: `New Booking Request - ${bookingData.tourName}`,
@@ -41,33 +43,33 @@ export async function sendBookingNotificationEmail(bookingData: BookingData): Pr
         Total Price: €${bookingData.totalPrice}
         
         Special Requests:
-        ${bookingData.specialRequests || 'None'}
+        ${bookingData.specialRequests || "None"}
         
         Please contact the customer to confirm the booking.
-      `
+      `,
     };
 
     // Using fetch to send email via your backend API
-    const response = await fetch('/api/send-booking-notification', {
-      method: 'POST',
+    const response = await fetch("/api/send-booking-notification", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         booking: bookingData,
-        adminEmail: EMAIL_CONFIG.adminEmail
+        adminEmail: EMAIL_CONFIG.adminEmail,
       }),
     });
 
     if (response.ok) {
-      console.log('Booking notification email sent successfully');
+      console.log("Booking notification email sent successfully");
       return true;
     } else {
-      console.error('Failed to send booking notification email');
+      console.error("Failed to send booking notification email");
       return false;
     }
   } catch (error) {
-    console.error('Error sending booking notification email:', error);
+    console.error("Error sending booking notification email:", error);
     return false;
   }
 }
@@ -84,51 +86,59 @@ export function sendBookingWhatsAppMessage(bookingData: BookingData): void {
 👥 *Guests:* ${bookingData.guests}
 💰 *Total:* €${bookingData.totalPrice}
 
-${bookingData.specialRequests ? `📝 *Special Requests:*\n${bookingData.specialRequests}` : ''}
+${bookingData.specialRequests ? `📝 *Special Requests:*\n${bookingData.specialRequests}` : ""}
 
 Please contact the customer to confirm the booking.`;
 
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${EMAIL_CONFIG.adminWhatsApp.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-  
+  const whatsappUrl = `https://wa.me/${EMAIL_CONFIG.adminWhatsApp.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+
   // Open WhatsApp in new tab
-  window.open(whatsappUrl, '_blank');
+  window.open(whatsappUrl, "_blank");
 }
 
 // Send booking confirmation email to customer
-export async function sendBookingConfirmationEmail(bookingData: BookingData): Promise<boolean> {
+export async function sendBookingConfirmationEmail(
+  bookingData: BookingData,
+): Promise<boolean> {
   try {
-    const response = await fetch('/api/send-booking-confirmation', {
-      method: 'POST',
+    const response = await fetch("/api/send-booking-confirmation", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(bookingData),
     });
 
     return response.ok;
   } catch (error) {
-    console.error('Error sending booking confirmation email:', error);
+    console.error("Error sending booking confirmation email:", error);
     return false;
   }
 }
 
 // Alternative: Generate WhatsApp message for specific tour booking
-export function generateTourWhatsAppMessage(tourName: string, customerName?: string): string {
+export function generateTourWhatsAppMessage(
+  tourName: string,
+  customerName?: string,
+): string {
   const baseMessage = `Hello! I'm interested in booking the ${tourName} tour.`;
-  
+
   if (customerName) {
     return `${baseMessage} My name is ${customerName}. Can you provide more information about availability and pricing?`;
   }
-  
+
   return `${baseMessage} Can you provide more information about availability and pricing?`;
 }
 
 // Quick booking via WhatsApp
-export function quickBookingViaWhatsApp(tourName: string, customerName?: string): void {
+export function quickBookingViaWhatsApp(
+  tourName: string,
+  customerName?: string,
+): void {
   const message = generateTourWhatsAppMessage(tourName, customerName);
   const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/${EMAIL_CONFIG.adminWhatsApp.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-  
-  window.open(whatsappUrl, '_blank');
+  const whatsappUrl = `https://wa.me/${EMAIL_CONFIG.adminWhatsApp.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+
+  window.open(whatsappUrl, "_blank");
 }

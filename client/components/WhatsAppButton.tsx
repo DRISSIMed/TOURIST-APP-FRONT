@@ -6,16 +6,16 @@ interface WhatsAppButtonProps {
   message?: string;
 }
 
-export default function WhatsAppButton({ 
+export default function WhatsAppButton({
   phoneNumber = "+212123456789",
-  message = "Hello! I'm interested in your Morocco tours. Can you help me?"
+  message = "Hello! I'm interested in your Morocco tours. Can you help me?",
 }: WhatsAppButtonProps) {
   const { t } = useLanguage();
 
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -36,27 +36,30 @@ export default function WhatsAppButton({
 }
 
 // WhatsApp Business Button with more features
-export function WhatsAppBusinessButton({ 
-  phoneNumber = "+212123456789" 
-}: { phoneNumber?: string }) {
+export function WhatsAppBusinessButton({
+  phoneNumber = "+212123456789",
+}: {
+  phoneNumber?: string;
+}) {
   const { t } = useLanguage();
 
   const sendBookingMessage = (tourName: string) => {
     const message = `Hello! I'm interested in booking the ${tourName} tour. Can you provide more information about availability and pricing?`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   const sendGeneralMessage = () => {
-    const message = "Hello! I'm interested in your Morocco tours. Can you help me plan my trip?";
+    const message =
+      "Hello! I'm interested in your Morocco tours. Can you help me plan my trip?";
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, "")}?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return {
     sendBookingMessage,
-    sendGeneralMessage
+    sendGeneralMessage,
   };
 }

@@ -445,7 +445,9 @@ export default function Index() {
                           {t("nav.bookNow")}
                         </button>
                         <button
-                          onClick={() => quickBookingViaWhatsApp(`${dest.name} Tour`)}
+                          onClick={() =>
+                            quickBookingViaWhatsApp(`${dest.name} Tour`)
+                          }
                           className="bg-green-500 text-white px-3 py-2 rounded-md hover:bg-green-600 transition-colors text-sm font-medium"
                           title="Quick booking via WhatsApp"
                         >

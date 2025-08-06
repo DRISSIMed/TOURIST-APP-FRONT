@@ -12,9 +12,9 @@ const BookingNotificationSchema = z.object({
     checkInDate: z.string(),
     guests: z.number().min(1).max(8),
     specialRequests: z.string().optional(),
-    totalPrice: z.number()
+    totalPrice: z.number(),
   }),
-  adminEmail: z.string().email()
+  adminEmail: z.string().email(),
 });
 
 const BookingConfirmationSchema = z.object({
@@ -26,7 +26,7 @@ const BookingConfirmationSchema = z.object({
   checkInDate: z.string(),
   guests: z.number().min(1).max(8),
   specialRequests: z.string().optional(),
-  totalPrice: z.number()
+  totalPrice: z.number(),
 });
 
 // Send booking notification to admin
@@ -51,7 +51,7 @@ Guests: ${booking.guests}
 Total Price: €${booking.totalPrice}
 
 Special Requests:
-${booking.specialRequests || 'None'}
+${booking.specialRequests || "None"}
 
 Please contact the customer to confirm the booking.
       `,
@@ -90,16 +90,20 @@ Please contact the customer to confirm the booking.
     </tr>
   </table>
   
-  ${booking.specialRequests ? `
+  ${
+    booking.specialRequests
+      ? `
     <h3>Special Requests:</h3>
     <p style="background: #f9f9f9; padding: 15px; border-left: 4px solid #e67e22;">${booking.specialRequests}</p>
-  ` : ''}
+  `
+      : ""
+  }
   
   <p style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
     <strong>Action Required:</strong> Please contact the customer to confirm the booking and provide payment instructions.
   </p>
 </div>
-      `
+      `,
     };
 
     // In a real application, you would use a service like:
@@ -107,24 +111,23 @@ Please contact the customer to confirm the booking.
     // - SendGrid
     // - Amazon SES
     // - Mailgun
-    
+
     // For now, we'll simulate sending the email
-    console.log('Booking notification email would be sent:', emailContent);
-    
+    console.log("Booking notification email would be sent:", emailContent);
+
     // Simulate successful email sending
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    res.json({ 
-      success: true, 
-      message: 'Booking notification sent successfully',
-      bookingId: `BK${Date.now()}` // Generate a simple booking ID
+    res.json({
+      success: true,
+      message: "Booking notification sent successfully",
+      bookingId: `BK${Date.now()}`, // Generate a simple booking ID
     });
-
   } catch (error) {
-    console.error('Error sending booking notification:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send booking notification' 
+    console.error("Error sending booking notification:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to send booking notification",
     });
   }
 };
@@ -186,24 +189,23 @@ export const handleBookingConfirmation: RequestHandler = async (req, res) => {
   <p>Best regards,<br>
      The Maroc Travel Team</p>
 </div>
-      `
+      `,
     };
 
-    console.log('Booking confirmation email would be sent:', confirmationEmail);
-    
+    console.log("Booking confirmation email would be sent:", confirmationEmail);
+
     // Simulate successful email sending
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-    res.json({ 
-      success: true, 
-      message: 'Booking confirmation sent successfully' 
+    res.json({
+      success: true,
+      message: "Booking confirmation sent successfully",
     });
-
   } catch (error) {
-    console.error('Error sending booking confirmation:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send booking confirmation' 
+    console.error("Error sending booking confirmation:", error);
+    res.status(500).json({
+      success: false,
+      message: "Failed to send booking confirmation",
     });
   }
 };
