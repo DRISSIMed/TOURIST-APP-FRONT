@@ -482,6 +482,9 @@ export default function BookingDetail() {
           </div>
         </div>
       </div>
+
+      {/* WhatsApp Contact Button */}
+      <WhatsAppButton />
     </div>
   );
 }
