@@ -359,7 +359,7 @@ export default function Index() {
                     </Link>
                     <button
                       onClick={() => quickBookingViaWhatsApp(tour.title)}
-                      className="bg-green-500 text-white px-4 py-3 rounded-lg hover:bg-green-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
+                      className="bg-morocco-orange text-white px-4 py-3 rounded-lg hover:bg-morocco-orange-dark transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
                       title="Quick booking via WhatsApp"
                     >
                       💬
@@ -454,7 +454,7 @@ export default function Index() {
                     </button>
                     <button
                       onClick={() => quickBookingViaWhatsApp(`${dest.name} Tour`)}
-                      className="bg-green-500 text-white px-4 py-3 rounded-lg hover:bg-green-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
+                      className="bg-morocco-orange text-white px-4 py-3 rounded-lg hover:bg-morocco-orange-dark transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
                       title="Quick booking via WhatsApp"
                     >
                       💬
