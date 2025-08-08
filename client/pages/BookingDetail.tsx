@@ -289,8 +289,8 @@ export default function BookingDetail() {
       {showSuccessMessage && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Check className="w-8 h-8 text-green-500" />
+            <div className="w-16 h-16 bg-morocco-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Check className="w-8 h-8 text-morocco-orange" />
             </div>
             <h3 className="text-2xl font-bold text-gray-800 mb-4">Booking Received!</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
@@ -369,15 +369,15 @@ export default function BookingDetail() {
                 <p className="text-gray-700 text-lg leading-relaxed mb-8">{tour.description}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-green-50 p-6 rounded-xl">
+                  <div className="bg-morocco-orange/5 p-6 rounded-xl">
                     <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                      <Check className="w-6 h-6 text-green-500 mr-2" />
+                      <Check className="w-6 h-6 text-morocco-orange mr-2" />
                       What's Included
                     </h3>
                     <div className="space-y-3">
                       {tour.includes.map((item, index) => (
                         <div key={index} className="flex items-center space-x-3">
-                          <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <Check className="w-4 h-4 text-morocco-orange flex-shrink-0" />
                           <span className="text-gray-700">{item}</span>
                         </div>
                       ))}
