@@ -22,7 +22,7 @@ export default function WhatsAppButton({
     <div className="fixed bottom-6 right-6 z-50">
       <button
         onClick={handleWhatsAppClick}
-        className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark hover:from-morocco-orange-dark hover:to-morocco-brown text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group relative overflow-hidden"
+        className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group relative overflow-hidden"
         title="Contact us on WhatsApp"
       >
         {/* Animated background pulse */}
