@@ -115,12 +115,14 @@ export default function Index() {
     {
       icon: <CheckCircle className="w-8 h-8 text-morocco-orange" />,
       title: "Expert Local Guides",
-      description: "Professional guides with deep local knowledge and fluent English speaking",
+      description:
+        "Professional guides with deep local knowledge and fluent English speaking",
     },
     {
       icon: <Award className="w-8 h-8 text-morocco-orange" />,
       title: "Premium Experience",
-      description: "Carefully curated experiences that showcase the best of Morocco",
+      description:
+        "Carefully curated experiences that showcase the best of Morocco",
     },
     {
       icon: <Shield className="w-8 h-8 text-morocco-orange" />,
@@ -130,7 +132,8 @@ export default function Index() {
     {
       icon: <Heart className="w-8 h-8 text-morocco-orange" />,
       title: "Personalized Service",
-      description: "Tailored experiences to match your interests and preferences",
+      description:
+        "Tailored experiences to match your interests and preferences",
     },
   ];
 
@@ -270,9 +273,12 @@ export default function Index() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose Maroc Travel?</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Why Choose Maroc Travel?
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We provide exceptional Moroccan experiences with attention to every detail
+              We provide exceptional Moroccan experiences with attention to
+              every detail
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -282,8 +288,12 @@ export default function Index() {
                 className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
               >
                 <div className="mb-6">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -294,9 +304,12 @@ export default function Index() {
       <section id="tours" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Popular Tours</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Popular Tours
+            </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover our most loved experiences crafted for unforgettable memories
+              Discover our most loved experiences crafted for unforgettable
+              memories
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -316,10 +329,10 @@ export default function Index() {
                   </div>
                   <div className="h-32 flex items-center justify-center">
                     <div className="text-6xl opacity-30">
-                      {tour.category === 'Cultural' && '🏛️'}
-                      {tour.category === 'Adventure' && '🏔️'}
-                      {tour.category === 'Relaxation' && '🏖️'}
-                      {tour.category === 'Culinary' && '🍷'}
+                      {tour.category === "Cultural" && "🏛️"}
+                      {tour.category === "Adventure" && "🏔️"}
+                      {tour.category === "Relaxation" && "🏖️"}
+                      {tour.category === "Culinary" && "🍷"}
                     </div>
                   </div>
                 </div>
@@ -381,7 +394,9 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
               <div className="text-5xl font-bold mb-2">400+</div>
-              <div className="text-orange-100 font-medium">Successful Tours</div>
+              <div className="text-orange-100 font-medium">
+                Successful Tours
+              </div>
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
               <div className="text-5xl font-bold mb-2">12K+</div>
@@ -389,7 +404,9 @@ export default function Index() {
             </div>
             <div className="text-center bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
               <div className="text-5xl font-bold mb-2">5+</div>
-              <div className="text-orange-100 font-medium">Years Experience</div>
+              <div className="text-orange-100 font-medium">
+                Years Experience
+              </div>
             </div>
           </div>
         </div>
@@ -403,7 +420,8 @@ export default function Index() {
               {t("section.exploreAllTours")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover Morocco's hidden gems and iconic destinations through our carefully curated experiences
+              Discover Morocco's hidden gems and iconic destinations through our
+              carefully curated experiences
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -415,7 +433,9 @@ export default function Index() {
                 <div className="bg-gradient-to-br from-morocco-sand/30 to-morocco-orange/20 p-8 relative">
                   <div className="h-40 flex flex-col justify-center items-center text-center">
                     <div className="text-5xl mb-4 opacity-60">🏜️</div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">{dest.name}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      {dest.name}
+                    </h3>
                     <p className="text-sm text-gray-600">{dest.subtitle}</p>
                   </div>
                 </div>
@@ -442,7 +462,9 @@ export default function Index() {
                       {t("nav.bookNow")}
                     </button>
                     <button
-                      onClick={() => quickBookingViaWhatsApp(`${dest.name} Tour`)}
+                      onClick={() =>
+                        quickBookingViaWhatsApp(`${dest.name} Tour`)
+                      }
                       className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
                       title="Quick booking via WhatsApp"
                     >
@@ -470,7 +492,10 @@ export default function Index() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors">
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-2xl p-8 hover:bg-gray-100 transition-colors"
+                >
                   <h3 className="text-lg font-semibold text-gray-800 mb-4">
                     {faq.question}
                   </h3>
@@ -517,8 +542,8 @@ export default function Index() {
                 MAROC
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Authentic Moroccan experiences crafted with passion and local expertise. 
-                Your gateway to discovering the magic of Morocco.
+                Authentic Moroccan experiences crafted with passion and local
+                expertise. Your gateway to discovering the magic of Morocco.
               </p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-gradient-to-r from-morocco-orange to-morocco-orange-dark rounded-full flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">

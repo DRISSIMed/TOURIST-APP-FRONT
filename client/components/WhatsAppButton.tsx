@@ -27,10 +27,10 @@ export default function WhatsAppButton({
       >
         {/* Animated background pulse */}
         <div className="absolute inset-0 bg-white opacity-20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-        
+
         {/* WhatsApp icon */}
         <MessageCircle className="w-7 h-7 relative z-10" />
-        
+
         {/* Tooltip */}
         <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
           <div className="flex items-center space-x-2">
@@ -53,7 +53,7 @@ export default function WhatsAppButton({
         title="Call us directly"
       >
         <Phone className="w-5 h-5" />
-        
+
         {/* Tooltip */}
         <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
           <div className="flex items-center space-x-2">

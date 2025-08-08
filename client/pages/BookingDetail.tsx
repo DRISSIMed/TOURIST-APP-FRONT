@@ -224,7 +224,7 @@ export default function BookingDetail() {
         sendBookingWhatsAppMessage(bookingData);
 
         setShowSuccessMessage(true);
-        
+
         // Reset form after successful submission
         setFormData({
           firstName: "",
@@ -272,7 +272,10 @@ export default function BookingDetail() {
       {/* Enhanced Navigation */}
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent">
+          <Link
+            to="/"
+            className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent"
+          >
             MAROC
           </Link>
           <Link
@@ -292,9 +295,13 @@ export default function BookingDetail() {
             <div className="w-16 h-16 bg-morocco-orange/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Check className="w-8 h-8 text-morocco-orange" />
             </div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Booking Received!</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Booking Received!
+            </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Thank you for your reservation! We've sent you a confirmation email and our team will contact you within 24 hours to confirm your booking details.
+              Thank you for your reservation! We've sent you a confirmation
+              email and our team will contact you within 24 hours to confirm
+              your booking details.
             </p>
             <button
               onClick={() => setShowSuccessMessage(false)}
@@ -340,33 +347,47 @@ export default function BookingDetail() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl">
                     <Clock className="w-6 h-6 text-morocco-orange" />
                     <div>
-                      <p className="text-sm text-gray-500 font-medium">Duration</p>
-                      <p className="font-semibold text-gray-800">{tour.duration}</p>
+                      <p className="text-sm text-gray-500 font-medium">
+                        Duration
+                      </p>
+                      <p className="font-semibold text-gray-800">
+                        {tour.duration}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl">
                     <MapPin className="w-6 h-6 text-morocco-orange" />
                     <div>
-                      <p className="text-sm text-gray-500 font-medium">Category</p>
-                      <p className="font-semibold text-gray-800">{tour.category}</p>
+                      <p className="text-sm text-gray-500 font-medium">
+                        Category
+                      </p>
+                      <p className="font-semibold text-gray-800">
+                        {tour.category}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 bg-morocco-orange/10 p-4 rounded-xl">
-                    <span className="w-6 h-6 bg-morocco-orange rounded-full flex items-center justify-center text-white font-bold text-sm">€</span>
+                    <span className="w-6 h-6 bg-morocco-orange rounded-full flex items-center justify-center text-white font-bold text-sm">
+                      €
+                    </span>
                     <div>
                       <p className="text-sm text-gray-500 font-medium">Price</p>
-                      <p className="font-bold text-morocco-orange text-xl">{tour.price}</p>
+                      <p className="font-bold text-morocco-orange text-xl">
+                        {tour.price}
+                      </p>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-gray-700 text-lg leading-relaxed mb-8">{tour.description}</p>
+                <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                  {tour.description}
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="bg-morocco-orange/5 p-6 rounded-xl">
@@ -376,7 +397,10 @@ export default function BookingDetail() {
                     </h3>
                     <div className="space-y-3">
                       {tour.includes.map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3">
+                        <div
+                          key={index}
+                          className="flex items-center space-x-3"
+                        >
                           <Check className="w-4 h-4 text-morocco-orange flex-shrink-0" />
                           <span className="text-gray-700">{item}</span>
                         </div>
@@ -391,7 +415,10 @@ export default function BookingDetail() {
                     </h3>
                     <div className="space-y-3">
                       {tour.highlights.map((highlight, index) => (
-                        <div key={index} className="flex items-center space-x-3">
+                        <div
+                          key={index}
+                          className="flex items-center space-x-3"
+                        >
                           <Star className="w-4 h-4 text-orange-500 flex-shrink-0" />
                           <span className="text-gray-700">{highlight}</span>
                         </div>
@@ -414,22 +441,30 @@ export default function BookingDetail() {
                   <div className="flex items-center space-x-3 text-center md:text-left">
                     <Shield className="w-8 h-8 text-morocco-orange flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-800">Safe & Secure</p>
+                      <p className="font-semibold text-gray-800">
+                        Safe & Secure
+                      </p>
                       <p className="text-sm text-gray-600">Licensed operator</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 text-center md:text-left">
                     <Award className="w-8 h-8 text-morocco-orange flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-800">Award Winning</p>
+                      <p className="font-semibold text-gray-800">
+                        Award Winning
+                      </p>
                       <p className="text-sm text-gray-600">Top rated tours</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-3 text-center md:text-left">
                     <Heart className="w-8 h-8 text-morocco-orange flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-gray-800">Loved by Guests</p>
-                      <p className="text-sm text-gray-600">{tour.reviews}+ reviews</p>
+                      <p className="font-semibold text-gray-800">
+                        Loved by Guests
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {tour.reviews}+ reviews
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -581,15 +616,15 @@ export default function BookingDetail() {
 
                 {/* Price Summary */}
                 <div className="bg-gradient-to-r from-morocco-orange/10 to-morocco-orange/5 p-6 rounded-xl border border-morocco-orange/20">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4">Booking Summary</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                    Booking Summary
+                  </h3>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-gray-700">Tour: {tour.title}</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-700">
-                        Price per person
-                      </span>
+                      <span className="text-gray-700">Price per person</span>
                       <span className="font-semibold">{tour.price}</span>
                     </div>
                     <div className="flex justify-between items-center">
@@ -619,15 +654,14 @@ export default function BookingDetail() {
                       <span>Processing Your Booking...</span>
                     </div>
                   ) : (
-                    <>
-                      Confirm Booking - €{totalPrice}
-                    </>
+                    <>Confirm Booking - €{totalPrice}</>
                   )}
                 </button>
 
                 <p className="text-xs text-gray-500 text-center leading-relaxed">
-                  By clicking "Confirm Booking", you agree to our terms and conditions. 
-                  Your booking is not confirmed until we contact you within 24 hours.
+                  By clicking "Confirm Booking", you agree to our terms and
+                  conditions. Your booking is not confirmed until we contact you
+                  within 24 hours.
                 </p>
               </form>
             </div>
@@ -650,7 +684,9 @@ export default function BookingDetail() {
                   <Mail className="w-5 h-5 text-morocco-orange" />
                   <div>
                     <p className="font-medium text-gray-800">Email Us</p>
-                    <p className="text-sm text-gray-600">booking@maroctravel.com</p>
+                    <p className="text-sm text-gray-600">
+                      booking@maroctravel.com
+                    </p>
                   </div>
                 </div>
               </div>
