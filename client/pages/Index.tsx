@@ -311,21 +311,21 @@ export default function Index() {
                 key={index}
                 className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group"
               >
-                <div className="relative overflow-hidden">
-                  <div
-                    className="h-48 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${tour.image})` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-xs font-semibold">
-                        {tour.category}
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-morocco-orange text-white px-3 py-1 rounded-full text-sm font-bold">
-                        {tour.price}
-                      </span>
+                <div className="bg-gradient-to-br from-morocco-orange/10 to-morocco-orange/20 p-8 relative">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="bg-morocco-orange text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      {tour.category}
+                    </span>
+                    <span className="bg-white text-morocco-orange px-3 py-1 rounded-full text-sm font-bold border border-morocco-orange">
+                      {tour.price}
+                    </span>
+                  </div>
+                  <div className="h-32 flex items-center justify-center">
+                    <div className="text-6xl opacity-30">
+                      {tour.category === 'Cultural' && '🏛️'}
+                      {tour.category === 'Adventure' && '🏔️'}
+                      {tour.category === 'Relaxation' && '🏖️'}
+                      {tour.category === 'Culinary' && '🍷'}
                     </div>
                   </div>
                 </div>
@@ -418,16 +418,11 @@ export default function Index() {
                 key={index}
                 className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
-                <div className="relative overflow-hidden">
-                  <div
-                    className="h-56 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${dest.image})` }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <h3 className="text-xl font-bold">{dest.name}</h3>
-                      <p className="text-sm opacity-90">{dest.subtitle}</p>
-                    </div>
+                <div className="bg-gradient-to-br from-morocco-sand/30 to-morocco-orange/20 p-8 relative">
+                  <div className="h-40 flex flex-col justify-center items-center text-center">
+                    <div className="text-5xl mb-4 opacity-60">🏜️</div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">{dest.name}</h3>
+                    <p className="text-sm text-gray-600">{dest.subtitle}</p>
                   </div>
                 </div>
                 <div className="p-6">
