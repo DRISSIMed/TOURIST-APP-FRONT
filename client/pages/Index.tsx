@@ -243,13 +243,7 @@ export default function Index() {
 
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F645f89bc7c85487fb781d2dd27aa359b%2Ff3f9918ea8f14140adc63641aaf31b56?format=webp&width=800')`,
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-morocco-orange via-morocco-orange-dark to-morocco-brown"></div>
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none tracking-wide">
@@ -359,7 +353,7 @@ export default function Index() {
                     </Link>
                     <button
                       onClick={() => quickBookingViaWhatsApp(tour.title)}
-                      className="bg-morocco-orange text-white px-4 py-3 rounded-lg hover:bg-morocco-orange-dark transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
+                      className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
                       title="Quick booking via WhatsApp"
                     >
                       💬
@@ -449,7 +443,7 @@ export default function Index() {
                     </button>
                     <button
                       onClick={() => quickBookingViaWhatsApp(`${dest.name} Tour`)}
-                      className="bg-morocco-orange text-white px-4 py-3 rounded-lg hover:bg-morocco-orange-dark transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
+                      className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
                       title="Quick booking via WhatsApp"
                     >
                       💬
