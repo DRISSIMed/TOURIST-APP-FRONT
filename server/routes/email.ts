@@ -56,52 +56,85 @@ ${booking.specialRequests || "None"}
 Please contact the customer to confirm the booking.
       `,
       html: `
-<h2>New Booking Request - ${booking.tourName}</h2>
-<div style="font-family: Arial, sans-serif; max-width: 600px;">
-  <h3>Booking Details:</h3>
-  <table style="border-collapse: collapse; width: 100%;">
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Tour:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">${booking.tourName}</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Customer:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">${booking.firstName} ${booking.lastName}</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Email:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;"><a href="mailto:${booking.email}">${booking.email}</a></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Phone:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;"><a href="tel:${booking.phone}">${booking.phone}</a></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Check-in Date:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">${booking.checkInDate}</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Guests:</td>
-      <td style="padding: 8px; border: 1px solid #ddd;">${booking.guests}</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Total Price:</td>
-      <td style="padding: 8px; border: 1px solid #ddd; color: #e67e22; font-weight: bold;">€${booking.totalPrice}</td>
-    </tr>
-  </table>
-  
-  ${
-    booking.specialRequests
-      ? `
-    <h3>Special Requests:</h3>
-    <p style="background: #f9f9f9; padding: 15px; border-left: 4px solid #e67e22;">${booking.specialRequests}</p>
-  `
-      : ""
-  }
-  
-  <p style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 4px;">
-    <strong>Action Required:</strong> Please contact the customer to confirm the booking and provide payment instructions.
-  </p>
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8f9fa;">
+  <div style="background: linear-gradient(135deg, #e67e22, #d35400); padding: 30px; text-align: center; color: white;">
+    <h1 style="margin: 0; font-size: 28px;">🏜️ Maroc Travel</h1>
+    <p style="margin: 10px 0 0 0; opacity: 0.9;">New Booking Request</p>
+  </div>
+
+  <div style="padding: 30px; background: white;">
+    <h2 style="color: #e67e22; margin: 0 0 20px 0; border-bottom: 2px solid #e67e22; padding-bottom: 10px;">
+      ${booking.tourName} - Booking Request
+    </h2>
+
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <h3 style="color: #333; margin: 0 0 15px 0;">Customer Information</h3>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Customer:</td>
+          <td style="padding: 12px; border: 1px solid #ddd;">${booking.firstName} ${booking.lastName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Email:</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><a href="mailto:${booking.email}" style="color: #e67e22; text-decoration: none;">${booking.email}</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Phone:</td>
+          <td style="padding: 12px; border: 1px solid #ddd;"><a href="tel:${booking.phone}" style="color: #e67e22; text-decoration: none;">${booking.phone}</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+      <h3 style="color: #333; margin: 0 0 15px 0;">Tour Details</h3>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ffeaa7; font-weight: bold;">Tour:</td>
+          <td style="padding: 12px; border: 1px solid #ffeaa7;">${booking.tourName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ffeaa7; font-weight: bold;">Date:</td>
+          <td style="padding: 12px; border: 1px solid #ffeaa7;">${booking.checkInDate}</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ffeaa7; font-weight: bold;">Guests:</td>
+          <td style="padding: 12px; border: 1px solid #ffeaa7;">${booking.guests} person(s)</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; border: 1px solid #ffeaa7; font-weight: bold;">Total Price:</td>
+          <td style="padding: 12px; border: 1px solid #ffeaa7; color: #e67e22; font-weight: bold; font-size: 18px;">€${booking.totalPrice}</td>
+        </tr>
+      </table>
+    </div>
+
+    ${
+      booking.specialRequests
+        ? `
+      <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #333; margin: 0 0 15px 0;">📝 Special Requests</h3>
+        <p style="margin: 0; padding: 15px; background: white; border-radius: 6px; border-left: 4px solid #28a745;">${booking.specialRequests}</p>
+      </div>
+    `
+        : ""
+    }
+
+    <div style="background: #dc3545; color: white; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px;">
+      <h3 style="margin: 0 0 10px 0;">🚨 ACTION REQUIRED</h3>
+      <p style="margin: 0; font-size: 16px;">
+        Please contact the customer within 24 hours to confirm availability and provide payment instructions.
+      </p>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center;">
+      <p style="margin: 0; color: #666;">
+        📞 Admin Phone: +212 123 456 789 | 📧 Admin Email: drissi01996@gmail.com
+      </p>
+    </div>
+  </div>
+
+  <div style="background: #333; color: white; padding: 20px; text-align: center;">
+    <p style="margin: 0; font-size: 14px;">© 2024 Maroc Travel - Making Morocco Accessible</p>
+  </div>
 </div>
       `,
     };
