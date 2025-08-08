@@ -1,11 +1,11 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-import { handleDemo } from "./routes/demo";
+import { handleDemo } from "./routes/demo.js";
 import {
   handleBookingNotification,
   handleBookingConfirmation,
-} from "./routes/email";
+} from "./routes/email.js";
 
 export function createServer() {
   const app = express();

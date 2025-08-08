@@ -15,9 +15,9 @@ interface BookingData {
 
 // Configuration for email service
 const EMAIL_CONFIG = {
-  adminEmail: "admin@maroctravel.com",
-  adminWhatsApp: "+212123456789",
-  companyName: "Maroc Travel",
+  adminEmail: "drissi01996@gmail.com",
+  adminWhatsApp: "+212601148493",
+  companyName: "Travel -test",
 };
 
 // Send email notification to admin using EmailJS

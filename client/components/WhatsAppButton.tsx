@@ -7,7 +7,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  phoneNumber = "+212123456789",
+  phoneNumber = "+212601148493",
   message = "Hello! I'm interested in your Morocco tours. Can you help me?",
 }: WhatsAppButtonProps) {
   const { t } = useLanguage();
@@ -37,7 +37,7 @@ export default function WhatsAppButton({
 
 // WhatsApp Business Button with more features
 export function WhatsAppBusinessButton({
-  phoneNumber = "+212123456789",
+  phoneNumber = "+212601148493",
 }: {
   phoneNumber?: string;
 }) {
