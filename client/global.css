@@ -152,6 +152,19 @@
     animation: bounceSubtle 2s infinite;
   }
 
+  .animate-float {
+    animation: floatGently 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    animation: gradientShift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
   /* Custom gradient text */
   .gradient-text {
     background: linear-gradient(
