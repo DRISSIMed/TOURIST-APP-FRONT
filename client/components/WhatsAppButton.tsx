@@ -34,7 +34,7 @@ export default function WhatsAppButton({
         {/* Tooltip */}
         <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
           <div className="flex items-center space-x-2">
-            <span className="text-morocco-orange">●</span>
+            <span className="text-blue-400">●</span>
             <span>Chat with us on WhatsApp</span>
           </div>
           <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
