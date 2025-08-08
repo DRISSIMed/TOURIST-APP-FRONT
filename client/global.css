@@ -152,6 +152,19 @@
     animation: bounceSubtle 2s infinite;
   }
 
+  .animate-float {
+    animation: floatGently 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .animate-gradient {
+    animation: gradientShift 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
   /* Custom gradient text */
   .gradient-text {
     background: linear-gradient(
@@ -218,6 +231,41 @@
   }
   60% {
     transform: translateY(-3px);
+  }
+}
+
+@keyframes floatGently {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-5px, -20px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-10px, -10px) rotate(3deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 

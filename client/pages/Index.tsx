@@ -246,7 +246,84 @@ export default function Index() {
 
       {/* Enhanced Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-morocco-orange via-morocco-orange-dark to-morocco-brown"></div>
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-morocco-orange via-morocco-orange-dark to-morocco-brown animate-gradient">
+          {/* Large Floating Geometric Shapes */}
+          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+          <div
+            className="absolute top-40 right-20 w-32 h-32 bg-white/5 rounded-full animate-bounce-subtle"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-20 left-20 w-16 h-16 bg-morocco-gold/20 rotate-45 animate-spin"
+            style={{ animationDuration: "20s" }}
+          ></div>
+          <div
+            className="absolute bottom-40 right-10 w-24 h-24 bg-white/10 rounded-lg rotate-12 animate-float"
+            style={{ animationDelay: "2s" }}
+          ></div>
+
+          {/* Medium Floating Elements */}
+          <div
+            className="absolute top-60 left-1/3 w-12 h-12 bg-morocco-sand/20 rounded-full animate-pulse"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute top-32 right-1/3 w-8 h-8 bg-white/15 rounded-full animate-float"
+            style={{ animationDelay: "3s" }}
+          ></div>
+          <div
+            className="absolute bottom-60 left-1/2 w-14 h-14 bg-morocco-gold/15 rounded-lg rotate-45 animate-bounce-subtle"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+
+          {/* Animated Gradient Overlay with Shimmer Effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
+
+          {/* Moroccan Pattern Overlay */}
+          <div
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: `radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 1px, transparent 1px),
+                              radial-gradient(circle at 40% 40%, rgba(255,255,255,0.05) 2px, transparent 2px),
+                              radial-gradient(circle at 60% 80%, rgba(255,255,255,0.08) 1.5px, transparent 1.5px)`,
+              backgroundSize: "100px 100px, 80px 80px, 60px 60px, 120px 120px",
+              animation: "floatGently 10s ease-in-out infinite",
+            }}
+          ></div>
+
+          {/* Subtle Moving Particles */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            {[...Array(25)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute bg-white/20 rounded-full animate-pulse"
+                style={{
+                  width: `${2 + Math.random() * 4}px`,
+                  height: `${2 + Math.random() * 4}px`,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${3 + Math.random() * 4}s`,
+                }}
+              ></div>
+            ))}
+          </div>
+
+          {/* Flowing Lines */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div
+              className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"
+              style={{ animationDuration: "4s" }}
+            ></div>
+            <div
+              className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-morocco-gold/30 to-transparent animate-shimmer"
+              style={{ animationDuration: "6s", animationDelay: "1s" }}
+            ></div>
+          </div>
+        </div>
+
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="text-white max-w-2xl">
             <h1 className="text-6xl md:text-8xl font-black mb-6 leading-none tracking-wide">
