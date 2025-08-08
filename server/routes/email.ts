@@ -175,52 +175,101 @@ export const handleBookingConfirmation: RequestHandler = async (req, res) => {
       to: booking.email,
       subject: `Booking Confirmation - ${booking.tourName} | Maroc Travel`,
       html: `
-<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-  <h1 style="color: #e67e22; text-align: center;">Maroc Travel</h1>
-  <h2 style="color: #333;">Booking Confirmation</h2>
-  
-  <p>Dear ${booking.firstName} ${booking.lastName},</p>
-  
-  <p>Thank you for your booking request! We have received your reservation and our team will contact you within 24 hours to confirm your booking and provide payment instructions.</p>
-  
-  <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-    <h3 style="color: #e67e22; margin-top: 0;">Your Booking Details:</h3>
-    <table style="border-collapse: collapse; width: 100%;">
-      <tr>
-        <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Tour:</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${booking.tourName}</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Date:</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${booking.checkInDate}</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Guests:</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${booking.guests}</td>
-      </tr>
-      <tr>
-        <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Total:</td>
-        <td style="padding: 8px; border: 1px solid #ddd; color: #e67e22; font-weight: bold;">€${booking.totalPrice}</td>
-      </tr>
-    </table>
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8f9fa;">
+  <div style="background: linear-gradient(135deg, #e67e22, #d35400); padding: 30px; text-align: center; color: white;">
+    <h1 style="margin: 0; font-size: 32px;">🏜️ Maroc Travel</h1>
+    <p style="margin: 10px 0 0 0; font-size: 18px; opacity: 0.9;">Your booking is being processed!</p>
   </div>
-  
-  <p><strong>What's Next?</strong></p>
-  <ul>
-    <li>Our team will contact you within 24 hours</li>
-    <li>We'll confirm availability and send payment instructions</li>
-    <li>Full payment is required to secure your booking</li>
-  </ul>
-  
-  <p>If you have any questions, please don't hesitate to contact us:</p>
-  <p>📞 Phone: +212 123 456 789<br>
-     📧 Email: booking@maroctravel.com<br>
-     💬 WhatsApp: +212 123 456 789</p>
-  
-  <p>We look forward to providing you with an amazing Moroccan experience!</p>
-  
-  <p>Best regards,<br>
-     The Maroc Travel Team</p>
+
+  <div style="padding: 30px; background: white;">
+    <h2 style="color: #e67e22; margin: 0 0 10px 0;">Hello ${booking.firstName}! 👋</h2>
+    <p style="font-size: 16px; color: #666; margin: 0 0 25px 0;">
+      Thank you for choosing Maroc Travel for your Moroccan adventure! We're thrilled to help you explore the magic of Morocco.
+    </p>
+
+    <div style="background: linear-gradient(135deg, #e67e22, #d35400); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 25px 0;">
+      <h3 style="margin: 0 0 10px 0; font-size: 20px;">✅ Booking Request Received</h3>
+      <p style="margin: 0; font-size: 16px; opacity: 0.9;">
+        Your order is under treatment and our team will contact you within 24 hours
+      </p>
+    </div>
+
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 25px 0; border: 2px solid #e67e22;">
+      <h3 style="color: #e67e22; margin: 0 0 20px 0; font-size: 20px;">📋 Your Booking Details</h3>
+      <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+          <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white; width: 30%;">Tour</td>
+          <td style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">${booking.tourName}</td>
+        </tr>
+        <tr>
+          <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Date</td>
+          <td style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">${booking.checkInDate}</td>
+        </tr>
+        <tr>
+          <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Guests</td>
+          <td style="padding: 15px; border: 1px solid #ddd; font-size: 16px;">${booking.guests} person(s)</td>
+        </tr>
+        <tr>
+          <td style="padding: 15px; border: 1px solid #ddd; font-weight: bold; background: #e67e22; color: white;">Total Amount</td>
+          <td style="padding: 15px; border: 1px solid #ddd; color: #e67e22; font-weight: bold; font-size: 20px;">€${booking.totalPrice}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="background: #e8f5e8; padding: 25px; border-radius: 12px; margin: 25px 0;">
+      <h3 style="color: #28a745; margin: 0 0 15px 0; font-size: 18px;">🔄 What Happens Next?</h3>
+      <div style="margin: 15px 0;">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <span style="background: #28a745; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 14px;">1</span>
+          <span style="color: #333; font-size: 16px;">Our team will contact you within 24 hours</span>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <span style="background: #28a745; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 14px;">2</span>
+          <span style="color: #333; font-size: 16px;">We'll confirm availability and discuss details</span>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+          <span style="background: #28a745; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 14px;">3</span>
+          <span style="color: #333; font-size: 16px;">Receive payment instructions to secure your booking</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="background: #28a745; color: white; width: 25px; height: 25px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; font-size: 14px;">4</span>
+          <span style="color: #333; font-size: 16px;">Enjoy your amazing Moroccan adventure! 🎉</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #fff3cd; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ffc107;">
+      <h3 style="color: #856404; margin: 0 0 15px 0; font-size: 18px;">📞 Need Immediate Assistance?</h3>
+      <div style="display: grid; gap: 10px;">
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 10px; font-size: 16px;">📞</span>
+          <span style="color: #333; font-size: 16px;"><strong>Phone:</strong> +212 123 456 789</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 10px; font-size: 16px;">📧</span>
+          <span style="color: #333; font-size: 16px;"><strong>Email:</strong> booking@maroctravel.com</span>
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="margin-right: 10px; font-size: 16px;">💬</span>
+          <span style="color: #333; font-size: 16px;"><strong>WhatsApp:</strong> +212 601 148 493</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin: 30px 0;">
+      <p style="font-size: 18px; color: #e67e22; font-weight: bold; margin: 0 0 10px 0;">
+        Thank you for choosing Maroc Travel! 🙏
+      </p>
+      <p style="color: #666; margin: 0; font-size: 16px;">
+        We can't wait to show you the wonders of Morocco!
+      </p>
+    </div>
+  </div>
+
+  <div style="background: #333; color: white; padding: 25px; text-align: center;">
+    <p style="margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">Maroc Travel Team</p>
+    <p style="margin: 0; font-size: 14px; opacity: 0.8;">© 2024 Maroc Travel - Making Morocco Accessible to Everyone</p>
+  </div>
 </div>
       `,
     };
