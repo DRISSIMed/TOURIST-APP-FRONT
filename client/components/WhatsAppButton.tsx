@@ -22,7 +22,7 @@ export default function WhatsAppButton({
     <div className="fixed bottom-6 right-6 z-50">
       <button
         onClick={handleWhatsAppClick}
-        className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group relative overflow-hidden"
+        className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark hover:from-morocco-orange-dark hover:to-morocco-brown text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 group relative overflow-hidden"
         title="Contact us on WhatsApp"
       >
         {/* Animated background pulse */}
@@ -34,7 +34,7 @@ export default function WhatsAppButton({
         {/* Tooltip */}
         <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-4 py-2 rounded-xl text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg">
           <div className="flex items-center space-x-2">
-            <span className="text-green-400">●</span>
+            <span className="text-morocco-orange">●</span>
             <span>Chat with us on WhatsApp</span>
           </div>
           <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
