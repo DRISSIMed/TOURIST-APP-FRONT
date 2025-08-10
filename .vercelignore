@@ -1,0 +1,14 @@
+server/
+netlify/
+dist/server/
+*.md
+!VERCEL_DEPLOYMENT.md
+.env
+.env.*
+*.log
+node_modules/
+.git/
+coverage/
+*.test.*
+*.spec.*
+vite.config.server.ts

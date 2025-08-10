@@ -49,24 +49,34 @@ export async function sendBookingNotificationEmail(
       `,
     };
 
-    // Using fetch to send email via your backend API
-    const response = await fetch("/api/send-booking-notification", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        booking: bookingData,
-        adminEmail: EMAIL_CONFIG.adminEmail,
-      }),
-    });
+    // Check if backend is available, fallback to WhatsApp if not
+    try {
+      const response = await fetch("/api/send-booking-notification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          booking: bookingData,
+          adminEmail: EMAIL_CONFIG.adminEmail,
+        }),
+      });
 
-    if (response.ok) {
-      console.log("Booking notification email sent successfully");
+      if (response.ok) {
+        console.log("Booking notification email sent successfully");
+        return true;
+      } else {
+        console.warn("Backend not available, falling back to WhatsApp");
+        sendBookingWhatsAppMessage(bookingData);
+        return true;
+      }
+    } catch (fetchError) {
+      console.warn(
+        "Backend not available, falling back to WhatsApp",
+        fetchError,
+      );
+      sendBookingWhatsAppMessage(bookingData);
       return true;
-    } else {
-      console.error("Failed to send booking notification email");
-      return false;
     }
   } catch (error) {
     console.error("Error sending booking notification email:", error);
@@ -110,9 +120,14 @@ export async function sendBookingConfirmationEmail(
       body: JSON.stringify(bookingData),
     });
 
-    return response.ok;
+    if (response.ok) {
+      return true;
+    } else {
+      console.warn("Backend not available for confirmation email");
+      return false;
+    }
   } catch (error) {
-    console.error("Error sending booking confirmation email:", error);
+    console.warn("Backend not available for confirmation email:", error);
     return false;
   }
 }
