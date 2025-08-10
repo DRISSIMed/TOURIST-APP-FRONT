@@ -27,6 +27,7 @@ No environment variables are required for frontend-only deployment as the app fa
 ## What's Included in Frontend Deployment
 
 ✅ **Working Features:**
+
 - Complete tour showcase website
 - Multi-language support (English, French, Spanish)
 - Responsive design with Morocco-themed styling
@@ -35,6 +36,7 @@ No environment variables are required for frontend-only deployment as the app fa
 - Contact forms with WhatsApp fallback
 
 ⚠️ **Backend-dependent Features (Gracefully Handled):**
+
 - Email notifications (falls back to WhatsApp)
 - Server-side form processing (uses WhatsApp instead)
 
@@ -43,6 +45,7 @@ No environment variables are required for frontend-only deployment as the app fa
 If you prefer manual deployment:
 
 1. **Build the frontend:**
+
    ```bash
    npm run build:client
    ```
@@ -78,7 +81,7 @@ Edit `client/services/emailService.ts`:
 ```typescript
 const EMAIL_CONFIG = {
   adminEmail: "your-email@domain.com",
-  adminWhatsApp: "+1234567890",  // Your WhatsApp number
+  adminWhatsApp: "+1234567890", // Your WhatsApp number
   companyName: "Your Company Name",
 };
 ```
@@ -92,15 +95,18 @@ const EMAIL_CONFIG = {
 ## Troubleshooting
 
 ### Build Fails
-- Ensure you're using Node.js 18+ 
+
+- Ensure you're using Node.js 18+
 - Clear `node_modules` and `package-lock.json`, then run `npm install`
 - Check for TypeScript errors with `npm run typecheck`
 
 ### Styles Missing
+
 - Ensure Tailwind CSS is properly configured
 - Check that `global.css` is imported in your components
 
 ### WhatsApp Not Working
+
 - Verify the phone number format in `EMAIL_CONFIG`
 - Test WhatsApp links manually: `https://wa.me/1234567890?text=test`
 
@@ -116,6 +122,7 @@ const EMAIL_CONFIG = {
 ## Support
 
 For deployment issues:
+
 - Check Vercel documentation: https://vercel.com/docs
 - Review build logs in Vercel dashboard
 - Test locally with `npm run build:client && npx serve dist/spa`

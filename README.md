@@ -7,12 +7,14 @@ A production-ready full-stack React application template featuring a beautiful M
 ### Frontend-Only Deployment (Recommended for Static Hosting)
 
 **Deploy to Vercel (Recommended):**
+
 1. Push code to GitHub/GitLab/Bitbucket
 2. Connect to [Vercel](https://vercel.com)
 3. Import your repository - auto-configured via `vercel.json`
 4. Deploy! ✨
 
 **Other Static Hosts:**
+
 ```bash
 npm run build:client
 # Deploy the dist/spa folder to Netlify, Vercel, GitHub Pages, etc.
@@ -23,6 +25,7 @@ npm run build:client
 ### Full-Stack Deployment
 
 For full backend functionality:
+
 ```bash
 npm run build      # Builds both client and server
 npm start          # Starts production server
@@ -92,18 +95,22 @@ npm run typecheck     # TypeScript validation
 ## 🎨 Customization
 
 ### Update Branding
+
 - **Colors**: Edit `client/global.css` and `tailwind.config.ts`
 - **Logo**: Search for "MAROC" in `client/pages/Index.tsx`
 - **Contact Info**: Update `client/services/emailService.ts`
 
 ### Add New Routes
+
 1. Create component in `client/pages/NewPage.tsx`
 2. Add route in `client/App.tsx`:
+
 ```typescript
 <Route path="/new-page" element={<NewPage />} />
 ```
 
 ### Add Backend Endpoints (Optional)
+
 1. Create handler in `server/routes/my-route.ts`
 2. Register in `server/index.ts`
 3. Use shared types from `shared/api.ts`
@@ -111,6 +118,7 @@ npm run typecheck     # TypeScript validation
 ## 📱 Mobile-First Design
 
 The website is built mobile-first with responsive design:
+
 - Touch-friendly navigation
 - Optimized images and animations
 - Fast WhatsApp integration
@@ -119,7 +127,9 @@ The website is built mobile-first with responsive design:
 ## 🔗 Integrations
 
 ### Available MCP Integrations
+
 For enhanced functionality, consider connecting:
+
 - **Supabase**: Database and authentication
 - **Netlify**: Advanced hosting features
 - **Figma**: Design to code conversion

@@ -71,7 +71,10 @@ export async function sendBookingNotificationEmail(
         return true;
       }
     } catch (fetchError) {
-      console.warn("Backend not available, falling back to WhatsApp", fetchError);
+      console.warn(
+        "Backend not available, falling back to WhatsApp",
+        fetchError,
+      );
       sendBookingWhatsAppMessage(bookingData);
       return true;
     }
