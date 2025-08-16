@@ -187,6 +187,12 @@ export default function Index() {
             >
               Activities
             </Link>
+            <Link
+              to="/circuits"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium hover:scale-105"
+            >
+              Circuits
+            </Link>
             <a
               href="#destinations"
               className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium hover:scale-105"
