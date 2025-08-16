@@ -58,7 +58,7 @@ const circuits = [
     itinerary: [
       "Day 1: Marrakech → Atlas Mountains → Aït Benhaddou → Skoura",
       "Day 2: Skoura → Dades Valley → Todra Gorge → Merzouga",
-      "Day 3: Merzouga → Desert Experience → Overnight in Camp",
+      "Day 3: Merzouga → Desert Experience ��� Overnight in Camp",
       "Day 4: Sahara Sunrise → Ouarzazate → Marrakech",
     ],
     image: "/placeholder-desert-1.jpg",
@@ -399,6 +399,12 @@ export default function Circuits() {
               >
                 Contact
               </a>
+              <a
+                href="/faq"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
+                FAQ
+              </a>
             </div>
             <button
               onClick={() => setSelectedCircuit(null)}
@@ -615,6 +621,12 @@ export default function Circuits() {
               className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
             >
               Contact
+            </a>
+            <a
+              href="/faq"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
+              FAQ
             </a>
           </div>
           <button className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium">

@@ -364,6 +364,12 @@ export default function Excursions() {
               >
                 Contact
               </a>
+              <a
+                href="/faq"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
+                FAQ
+              </a>
             </div>
             <button
               onClick={() => setSelectedExcursion(null)}
@@ -586,6 +592,12 @@ export default function Excursions() {
               className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
             >
               Contact
+            </a>
+            <a
+              href="/faq"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
+              FAQ
             </a>
           </div>
           <button className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium">
