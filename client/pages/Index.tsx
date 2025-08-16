@@ -172,7 +172,7 @@ export default function Index() {
       <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent">
-            MAROC
+            MustanoTravel Tours
           </div>
           <div className="hidden md:flex space-x-8">
             <a
@@ -369,7 +369,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              Why Choose Maroc Travel?
+              Why Choose MustanoTravel Tours?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We provide exceptional Moroccan experiences with attention to
@@ -634,7 +634,7 @@ export default function Index() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-6">
               <h3 className="text-3xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent">
-                MAROC
+                MustanoTravel Tours
               </h3>
               <p className="text-gray-400 leading-relaxed">
                 Authentic Moroccan experiences crafted with passion and local
@@ -675,7 +675,7 @@ export default function Index() {
                 </div>
                 <div className="flex items-center space-x-3 hover:text-white transition-colors">
                   <Mail className="w-5 h-5 text-morocco-orange" />
-                  <span>hello@maroctravel.com</span>
+                  <span>hello@mustanotravel.com</span>
                 </div>
                 <div className="flex items-center space-x-3 hover:text-white transition-colors">
                   <MapPin className="w-5 h-5 text-morocco-orange" />
@@ -706,7 +706,7 @@ export default function Index() {
 
           <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400">
             <p>
-              &copy; 2024 Maroc Travel. All rights reserved. | Privacy Policy |
+              &copy; 2024 MustanoTravel Tours. All rights reserved. | Privacy Policy |
               Terms of Service
             </p>
           </div>
