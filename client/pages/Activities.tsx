@@ -294,6 +294,12 @@ export default function Activities() {
               >
                 Contact
               </a>
+              <a
+                href="/faq"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
+                FAQ
+              </a>
             </div>
             <button
               onClick={() => setSelectedActivity(null)}

@@ -217,6 +217,12 @@ export default function Index() {
             >
               {t("nav.contact")}
             </a>
+            <Link
+              to="/faq"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium hover:scale-105"
+            >
+              FAQ
+            </Link>
           </div>
           <div className="flex items-center space-x-4">
             {/* Enhanced Language Switcher */}
