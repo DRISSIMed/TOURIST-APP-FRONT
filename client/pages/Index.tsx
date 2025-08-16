@@ -181,6 +181,12 @@ export default function Index() {
             >
               {t("nav.tours")}
             </a>
+            <Link
+              to="/activities"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium hover:scale-105"
+            >
+              Activities
+            </Link>
             <a
               href="#destinations"
               className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium hover:scale-105"
