@@ -9,6 +9,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/hooks/useLanguage";
 import Index from "./pages/Index";
 import BookingDetail from "./pages/BookingDetail";
+import Activities from "./pages/Activities";
+import Circuits from "./pages/Circuits";
+import Excursions from "./pages/Excursions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/activities" element={<Activities />} />
+            <Route path="/circuits" element={<Circuits />} />
+            <Route path="/excursions" element={<Excursions />} />
             <Route path="/booking/:tourId" element={<BookingDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
