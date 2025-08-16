@@ -72,7 +72,6 @@ export default function Index() {
     },
   ];
 
-
   const features = [
     {
       icon: <CheckCircle className="w-8 h-8 text-morocco-orange" />,
@@ -469,7 +468,6 @@ export default function Index() {
         </div>
       </section>
 
-
       {/* Enhanced FAQ Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -603,8 +601,8 @@ export default function Index() {
 
           <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400">
             <p>
-              &copy; 2024 MustanoTravel Tours. All rights reserved. | Privacy Policy |
-              Terms of Service
+              &copy; 2024 MustanoTravel Tours. All rights reserved. | Privacy
+              Policy | Terms of Service
             </p>
           </div>
         </div>

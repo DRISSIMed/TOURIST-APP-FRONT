@@ -38,28 +38,32 @@ const faqData: FAQItem[] = [
     id: "planning-1",
     category: "Planning & Booking",
     question: "How far in advance should I book my Morocco tour?",
-    answer: "We recommend booking at least 2-3 weeks in advance, especially during peak seasons (spring and autumn). For popular tours like Sahara Desert expeditions, booking 4-6 weeks ahead ensures better availability and accommodation options.",
+    answer:
+      "We recommend booking at least 2-3 weeks in advance, especially during peak seasons (spring and autumn). For popular tours like Sahara Desert expeditions, booking 4-6 weeks ahead ensures better availability and accommodation options.",
     icon: <Calendar className="w-5 h-5" />,
   },
   {
     id: "planning-2",
     category: "Planning & Booking",
     question: "What's the best time to visit Morocco?",
-    answer: "Spring (March-May) and autumn (September-November) offer the most comfortable weather. Summer can be very hot, especially in the desert, while winter is mild but can be cool in the mountains. Each season offers unique experiences and different pricing.",
+    answer:
+      "Spring (March-May) and autumn (September-November) offer the most comfortable weather. Summer can be very hot, especially in the desert, while winter is mild but can be cool in the mountains. Each season offers unique experiences and different pricing.",
     icon: <Sun className="w-5 h-5" />,
   },
   {
     id: "planning-3",
     category: "Planning & Booking",
     question: "Can I customize my tour itinerary?",
-    answer: "Absolutely! We specialize in creating personalized experiences. Contact us with your preferences, interests, and budget, and we'll design a custom itinerary that matches your travel style perfectly.",
+    answer:
+      "Absolutely! We specialize in creating personalized experiences. Contact us with your preferences, interests, and budget, and we'll design a custom itinerary that matches your travel style perfectly.",
     icon: <Heart className="w-5 h-5" />,
   },
   {
     id: "planning-4",
     category: "Planning & Booking",
     question: "Do you offer group discounts?",
-    answer: "Yes, we offer attractive group discounts for parties of 6 or more people. Family groups and corporate bookings also qualify for special rates. Contact us for a personalized quote based on your group size.",
+    answer:
+      "Yes, we offer attractive group discounts for parties of 6 or more people. Family groups and corporate bookings also qualify for special rates. Contact us for a personalized quote based on your group size.",
     icon: <Users className="w-5 h-5" />,
   },
 
@@ -68,28 +72,32 @@ const faqData: FAQItem[] = [
     id: "travel-1",
     category: "Travel Requirements",
     question: "Do I need a visa to visit Morocco?",
-    answer: "Citizens of the US, Canada, EU, UK, Australia, and many other countries can enter Morocco visa-free for up to 90 days. Check with your local Moroccan consulate or embassy for specific requirements based on your nationality.",
+    answer:
+      "Citizens of the US, Canada, EU, UK, Australia, and many other countries can enter Morocco visa-free for up to 90 days. Check with your local Moroccan consulate or embassy for specific requirements based on your nationality.",
     icon: <Plane className="w-5 h-5" />,
   },
   {
     id: "travel-2",
     category: "Travel Requirements",
     question: "What should I pack for my Morocco trip?",
-    answer: "Pack light, comfortable clothing suitable for walking, a hat, sunglasses, sunscreen, and comfortable walking shoes. For desert tours, bring warm layers for cool nights. We provide detailed packing lists with each booking confirmation.",
+    answer:
+      "Pack light, comfortable clothing suitable for walking, a hat, sunglasses, sunscreen, and comfortable walking shoes. For desert tours, bring warm layers for cool nights. We provide detailed packing lists with each booking confirmation.",
     icon: <Mountain className="w-5 h-5" />,
   },
   {
     id: "travel-3",
     category: "Travel Requirements",
     question: "Are there any health requirements or vaccinations needed?",
-    answer: "No special vaccinations are required for Morocco. However, we recommend being up to date with routine vaccines. Travel insurance is highly recommended. Consult your healthcare provider for personalized medical advice.",
+    answer:
+      "No special vaccinations are required for Morocco. However, we recommend being up to date with routine vaccines. Travel insurance is highly recommended. Consult your healthcare provider for personalized medical advice.",
     icon: <Shield className="w-5 h-5" />,
   },
   {
     id: "travel-4",
     category: "Travel Requirements",
     question: "What currency is used in Morocco and can I use credit cards?",
-    answer: "The Moroccan Dirham (MAD) is the local currency. Credit cards are accepted in major hotels and restaurants, but cash is preferred in markets and smaller establishments. ATMs are widely available in cities.",
+    answer:
+      "The Moroccan Dirham (MAD) is the local currency. Credit cards are accepted in major hotels and restaurants, but cash is preferred in markets and smaller establishments. ATMs are widely available in cities.",
     icon: <CreditCard className="w-5 h-5" />,
   },
 
@@ -98,28 +106,32 @@ const faqData: FAQItem[] = [
     id: "experience-1",
     category: "Tour Experience",
     question: "Are your tour guides licensed and do they speak English?",
-    answer: "Yes, all our guides are professionally licensed and speak fluent English. Many also speak French, Spanish, and other languages. They're knowledgeable about Moroccan history, culture, and local customs.",
+    answer:
+      "Yes, all our guides are professionally licensed and speak fluent English. Many also speak French, Spanish, and other languages. They're knowledgeable about Moroccan history, culture, and local customs.",
     icon: <MessageCircle className="w-5 h-5" />,
   },
   {
     id: "experience-2",
     category: "Tour Experience",
     question: "What type of accommodation is included in the tours?",
-    answer: "We offer various accommodation levels from comfortable riads and hotels to luxury desert camps. All accommodations are carefully selected for quality, authenticity, and comfort. Specific details are provided with each tour description.",
+    answer:
+      "We offer various accommodation levels from comfortable riads and hotels to luxury desert camps. All accommodations are carefully selected for quality, authenticity, and comfort. Specific details are provided with each tour description.",
     icon: <MapPin className="w-5 h-5" />,
   },
   {
     id: "experience-3",
     category: "Tour Experience",
     question: "What meals are included in the tours?",
-    answer: "Most tours include breakfast and dinner. Lunch is sometimes included on full-day excursions. We accommodate dietary restrictions and preferences - just let us know when booking. You'll experience authentic Moroccan cuisine throughout your journey.",
+    answer:
+      "Most tours include breakfast and dinner. Lunch is sometimes included on full-day excursions. We accommodate dietary restrictions and preferences - just let us know when booking. You'll experience authentic Moroccan cuisine throughout your journey.",
     icon: <Utensils className="w-5 h-5" />,
   },
   {
     id: "experience-4",
     category: "Tour Experience",
     question: "Is photography allowed at all locations?",
-    answer: "Photography is generally allowed at most tourist sites. However, some religious sites and museums may have restrictions. Our guides will inform you of any photography rules. We also offer professional photography services for special occasions.",
+    answer:
+      "Photography is generally allowed at most tourist sites. However, some religious sites and museums may have restrictions. Our guides will inform you of any photography rules. We also offer professional photography services for special occasions.",
     icon: <Camera className="w-5 h-5" />,
   },
 
@@ -128,28 +140,32 @@ const faqData: FAQItem[] = [
     id: "safety-1",
     category: "Safety & Support",
     question: "How safe is Morocco for tourists?",
-    answer: "Morocco is generally very safe for tourists. We prioritize your safety with experienced drivers, reliable vehicles, and 24/7 support. Our guides are trained in safety protocols and emergency procedures.",
+    answer:
+      "Morocco is generally very safe for tourists. We prioritize your safety with experienced drivers, reliable vehicles, and 24/7 support. Our guides are trained in safety protocols and emergency procedures.",
     icon: <Shield className="w-5 h-5" />,
   },
   {
     id: "safety-2",
     category: "Safety & Support",
     question: "What support do you provide during the tour?",
-    answer: "We provide 24/7 support throughout your journey. Our team is available via phone, WhatsApp, and email. Each tour includes emergency contact information and our guides carry communication devices for remote areas.",
+    answer:
+      "We provide 24/7 support throughout your journey. Our team is available via phone, WhatsApp, and email. Each tour includes emergency contact information and our guides carry communication devices for remote areas.",
     icon: <Phone className="w-5 h-5" />,
   },
   {
     id: "safety-3",
     category: "Safety & Support",
     question: "What happens if there's bad weather during my tour?",
-    answer: "We monitor weather conditions closely and have contingency plans for all tours. If weather affects your itinerary, we'll provide alternative activities or adjust the schedule to ensure you still have an amazing experience.",
+    answer:
+      "We monitor weather conditions closely and have contingency plans for all tours. If weather affects your itinerary, we'll provide alternative activities or adjust the schedule to ensure you still have an amazing experience.",
     icon: <Clock className="w-5 h-5" />,
   },
   {
     id: "safety-4",
     category: "Safety & Support",
     question: "What is your cancellation and refund policy?",
-    answer: "We offer flexible cancellation policies. Free cancellation up to 48 hours before departure for most tours. Cancellations due to weather or unforeseen circumstances are handled case-by-case with fair refund policies. Full details are provided with booking confirmation.",
+    answer:
+      "We offer flexible cancellation policies. Free cancellation up to 48 hours before departure for most tours. Cancellations due to weather or unforeseen circumstances are handled case-by-case with fair refund policies. Full details are provided with booking confirmation.",
     icon: <Mail className="w-5 h-5" />,
   },
 ];
@@ -157,7 +173,7 @@ const faqData: FAQItem[] = [
 const categories = [
   "All",
   "Planning & Booking",
-  "Travel Requirements", 
+  "Travel Requirements",
   "Tour Experience",
   "Safety & Support",
 ];
@@ -169,16 +185,16 @@ export default function FAQ() {
   const [openItems, setOpenItems] = useState<string[]>([]);
 
   const toggleItem = (id: string) => {
-    setOpenItems(prev => 
-      prev.includes(id) 
-        ? prev.filter(item => item !== id)
-        : [...prev, id]
+    setOpenItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
-  const filteredFAQs = faqData.filter(faq => {
-    const categoryMatch = selectedCategory === "All" || faq.category === selectedCategory;
-    const searchMatch = searchQuery === "" || 
+  const filteredFAQs = faqData.filter((faq) => {
+    const categoryMatch =
+      selectedCategory === "All" || faq.category === selectedCategory;
+    const searchMatch =
+      searchQuery === "" ||
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
     return categoryMatch && searchMatch;
@@ -257,8 +273,8 @@ export default function FAQ() {
               Frequently Asked Questions
             </h1>
             <p className="text-xl mb-8 text-white/90">
-              Find answers to the most common questions about traveling to Morocco
-              and our tour services
+              Find answers to the most common questions about traveling to
+              Morocco and our tour services
             </p>
           </div>
         </div>
@@ -380,7 +396,8 @@ export default function FAQ() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Our travel experts are here to help you plan the perfect Moroccan adventure
+            Our travel experts are here to help you plan the perfect Moroccan
+            adventure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
