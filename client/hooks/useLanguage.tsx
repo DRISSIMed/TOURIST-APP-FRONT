@@ -40,9 +40,9 @@ const translations: Translations = {
 
   // Hero Section
   "hero.title": {
-    en: "MAROC",
-    fr: "MAROC",
-    es: "MARRUECOS",
+    en: "MustanoTravel Tours",
+    fr: "MustanoTravel Tours",
+    es: "MustanoTravel Tours",
   },
   "hero.subtitle": {
     en: "Discover the authentic beauty of Morocco through our carefully curated experiences. From ancient medinas to vast desert landscapes.",
