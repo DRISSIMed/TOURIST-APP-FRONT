@@ -276,7 +276,7 @@ export default function BookingDetail() {
             to="/"
             className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent"
           >
-            MAROC
+            MustanoTravel Tours
           </Link>
           <Link
             to="/"
@@ -685,7 +685,7 @@ export default function BookingDetail() {
                   <div>
                     <p className="font-medium text-gray-800">Email Us</p>
                     <p className="text-sm text-gray-600">
-                      booking@maroctravel.com
+                      booking@mustanotravel.com
                     </p>
                   </div>
                 </div>

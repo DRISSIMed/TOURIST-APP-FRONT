@@ -58,7 +58,7 @@ const circuits = [
     itinerary: [
       "Day 1: Marrakech → Atlas Mountains → Aït Benhaddou → Skoura",
       "Day 2: Skoura → Dades Valley → Todra Gorge → Merzouga",
-      "Day 3: Merzouga → Desert Experience → Overnight in Camp",
+      "Day 3: Merzouga → Desert Experience ��� Overnight in Camp",
       "Day 4: Sahara Sunrise → Ouarzazate → Marrakech",
     ],
     image: "/placeholder-desert-1.jpg",
@@ -375,7 +375,7 @@ export default function Circuits() {
         <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent">
-              MAROC
+              MustanoTravel Tours
             </div>
             <div className="hidden md:flex space-x-8">
               <a
@@ -398,6 +398,12 @@ export default function Circuits() {
                 className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
               >
                 Contact
+              </a>
+              <a
+                href="/faq"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
+                FAQ
               </a>
             </div>
             <button
@@ -615,6 +621,12 @@ export default function Circuits() {
               className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
             >
               Contact
+            </a>
+            <a
+              href="/faq"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
+              FAQ
             </a>
           </div>
           <button className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium">
