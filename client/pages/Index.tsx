@@ -72,44 +72,6 @@ export default function Index() {
     },
   ];
 
-  const destinations = [
-    {
-      name: t("dest.casablanca"),
-      subtitle: t("dest.casablancaSub"),
-      spots: `8 ${t("common.spots")}`,
-      services: "4 SERVICES",
-      price: `${t("common.only")} €199`,
-      image:
-        "https://images.unsplash.com/photo-1539650116574-75c0c6d0d66e?w=250&h=300&fit=crop",
-    },
-    {
-      name: t("dest.meknaissa"),
-      subtitle: t("dest.meknassaSub"),
-      spots: `6 ${t("common.spots")}`,
-      services: "5 SERVICES",
-      price: `${t("common.only")} €179`,
-      image:
-        "https://images.unsplash.com/photo-1573160103600-9b02b2b6c048?w=250&h=300&fit=crop",
-    },
-    {
-      name: t("dest.ouarzazate"),
-      subtitle: t("dest.ouarzazateSub"),
-      spots: `4 ${t("common.spots")}`,
-      services: "3 SERVICES",
-      price: `${t("common.only")} €249`,
-      image:
-        "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=250&h=300&fit=crop",
-    },
-    {
-      name: t("dest.agadir"),
-      subtitle: t("dest.agadirSub"),
-      spots: `5 ${t("common.spots")}`,
-      services: "6 SERVICES",
-      price: `${t("common.only")} €159`,
-      image:
-        "https://images.unsplash.com/photo-1558618666-e0c7b5f5f0d6?w=250&h=300&fit=crop",
-    },
-  ];
 
   const features = [
     {
@@ -507,71 +469,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Enhanced Destinations Section */}
-      <section id="destinations" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              {t("section.exploreAllTours")}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover Morocco's hidden gems and iconic destinations through our
-              carefully curated experiences
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {destinations.map((dest, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
-              >
-                <div className="bg-gradient-to-br from-morocco-sand/30 to-morocco-orange/20 p-8 relative">
-                  <div className="h-40 flex flex-col justify-center items-center text-center">
-                    <div className="text-5xl mb-4 opacity-60">🏜️</div>
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">
-                      {dest.name}
-                    </h3>
-                    <p className="text-sm text-gray-600">{dest.subtitle}</p>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-3 text-sm text-gray-600">
-                    <span>{dest.spots}</span>
-                    <span>{dest.services}</span>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-2xl font-bold text-morocco-orange">
-                      {dest.price}
-                    </span>
-                  </div>
-                  <div className="flex gap-2">
-                    <button className="flex-1 bg-gradient-to-r from-morocco-orange to-morocco-orange-dark text-white px-4 py-3 rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm font-medium">
-                      {t("nav.bookNow")}
-                    </button>
-                    <button
-                      onClick={() =>
-                        quickBookingViaWhatsApp(`${dest.name} Tour`)
-                      }
-                      className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 text-sm font-medium hover:shadow-lg transform hover:scale-105"
-                      title="Quick booking via WhatsApp"
-                    >
-                      💬
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Enhanced FAQ Section */}
       <section className="py-20 bg-white">
