@@ -375,7 +375,7 @@ export default function Circuits() {
         <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
             <div className="text-2xl font-bold bg-gradient-to-r from-morocco-orange to-morocco-gold bg-clip-text text-transparent">
-              MAROC
+              MustanoTravel Tours
             </div>
             <div className="hidden md:flex space-x-8">
               <a
