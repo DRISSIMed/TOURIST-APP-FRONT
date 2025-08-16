@@ -10,6 +10,7 @@ import { LanguageProvider } from "@/hooks/useLanguage";
 import Index from "./pages/Index";
 import BookingDetail from "./pages/BookingDetail";
 import Activities from "./pages/Activities";
+import Circuits from "./pages/Circuits";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
