@@ -283,12 +283,6 @@ export default function Activities() {
                 Activities
               </a>
               <a
-                href="/#destinations"
-                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
-              >
-                Destinations
-              </a>
-              <a
                 href="/#contact"
                 className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
               >
@@ -473,12 +467,6 @@ export default function Activities() {
             </a>
             <a href="#activities" className="text-morocco-orange font-medium">
               Activities
-            </a>
-            <a
-              href="/#destinations"
-              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
-            >
-              Destinations
             </a>
             <a
               href="/#contact"
