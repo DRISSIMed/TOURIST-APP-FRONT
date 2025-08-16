@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { 
-  Star, 
-  Clock, 
-  Users, 
-  MapPin, 
+import {
+  Star,
+  Clock,
+  Users,
+  MapPin,
   Filter,
   ChefHat,
   Mountain,
@@ -12,7 +12,7 @@ import {
   Wind,
   ArrowRight,
   MessageCircle,
-  Calendar
+  Calendar,
 } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -23,8 +23,10 @@ const activities = [
     id: "moroccan-cooking",
     title: "Moroccan Cooking Class Experience",
     shortTitle: "Cooking Class",
-    description: "Immerse yourself in Morocco's rich culinary traditions with hands-on cooking classes. Learn to prepare authentic tagine and couscous from scratch using traditional techniques passed down through generations.",
-    longDescription: "This immersive cooking experience takes you on a journey through Morocco's culinary heritage. Start with a guided market tour to select the freshest ingredients, then learn to prepare iconic dishes like tagine and couscous under the guidance of expert local chefs. The class includes marinating meats, layering flavors with aromatic spices, and mastering the art of steaming couscous to perfection. Enjoy traditional mint tea and take home recipe booklets to recreate these authentic flavors.",
+    description:
+      "Immerse yourself in Morocco's rich culinary traditions with hands-on cooking classes. Learn to prepare authentic tagine and couscous from scratch using traditional techniques passed down through generations.",
+    longDescription:
+      "This immersive cooking experience takes you on a journey through Morocco's culinary heritage. Start with a guided market tour to select the freshest ingredients, then learn to prepare iconic dishes like tagine and couscous under the guidance of expert local chefs. The class includes marinating meats, layering flavors with aromatic spices, and mastering the art of steaming couscous to perfection. Enjoy traditional mint tea and take home recipe booklets to recreate these authentic flavors.",
     duration: "4-6 hours",
     price: "65€",
     groupSize: "2-12 people",
@@ -36,7 +38,7 @@ const activities = [
       "Learn authentic Moroccan cooking techniques",
       "Traditional mint tea ceremony",
       "Recipe booklet to take home",
-      "Experience local hospitality"
+      "Experience local hospitality",
     ],
     includes: [
       "Professional cooking instructor",
@@ -44,20 +46,23 @@ const activities = [
       "Market tour (optional)",
       "Traditional mint tea",
       "Recipe booklet",
-      "Certificate of completion"
+      "Certificate of completion",
     ],
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=300&fit=crop",
     icon: <ChefHat className="w-6 h-6" />,
     rating: 4.9,
     reviews: 284,
-    location: "Marrakech Medina"
+    location: "Marrakech Medina",
   },
   {
     id: "marrakech-gardens",
     title: "Discover the Soul of Marrakech Through Its Enchanted Gardens",
     shortTitle: "Enchanted Gardens",
-    description: "Explore Marrakech's most beautiful gardens including the famous Majorelle Garden and historic Menara Gardens. Discover botanical wonders and artistic heritage in these peaceful oases.",
-    longDescription: "Journey through Marrakech's most spectacular gardens, each telling a unique story. Visit the iconic Majorelle Garden with its vibrant cobalt blue structures and diverse plant collection, created by French artist Jacques Majorelle. Explore the historic Menara Gardens dating back to the 12th century, featuring olive groves and a stunning pavilion with Atlas Mountain views. Discover the Berber Museum and Yves Saint Laurent Museum, and learn about the horticultural traditions that have shaped these urban oases.",
+    description:
+      "Explore Marrakech's most beautiful gardens including the famous Majorelle Garden and historic Menara Gardens. Discover botanical wonders and artistic heritage in these peaceful oases.",
+    longDescription:
+      "Journey through Marrakech's most spectacular gardens, each telling a unique story. Visit the iconic Majorelle Garden with its vibrant cobalt blue structures and diverse plant collection, created by French artist Jacques Majorelle. Explore the historic Menara Gardens dating back to the 12th century, featuring olive groves and a stunning pavilion with Atlas Mountain views. Discover the Berber Museum and Yves Saint Laurent Museum, and learn about the horticultural traditions that have shaped these urban oases.",
     duration: "Half day (4 hours)",
     price: "45€",
     groupSize: "1-15 people",
@@ -69,7 +74,7 @@ const activities = [
       "Berber Museum visit",
       "Yves Saint Laurent Museum",
       "Photography opportunities in stunning settings",
-      "Learn about Moroccan botanical heritage"
+      "Learn about Moroccan botanical heritage",
     ],
     includes: [
       "Professional guide",
@@ -77,20 +82,23 @@ const activities = [
       "Transportation between gardens",
       "Museum entries",
       "Refreshments",
-      "Photography assistance"
+      "Photography assistance",
     ],
-    image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&h=300&fit=crop",
     icon: <Flower2 className="w-6 h-6" />,
     rating: 4.7,
     reviews: 198,
-    location: "Marrakech"
+    location: "Marrakech",
   },
   {
     id: "hot-air-balloon",
     title: "Hot Air Balloon Over Atlas Mountains",
     shortTitle: "Hot Air Balloon",
-    description: "Experience breathtaking sunrise views from above as you float over the Atlas Mountains and Moroccan landscapes in a hot air balloon adventure.",
-    longDescription: "Rise with the sun for an unforgettable hot air balloon adventure over Morocco's stunning landscapes. Float peacefully above the Atlas Mountains, Berber villages, and desert plains while enjoying panoramic views that stretch to the horizon. This magical experience includes a traditional Berber breakfast served in a nomad tent after landing, complete with fresh bread, honey, and mint tea. Receive a flight certificate as a keepsake of this once-in-a-lifetime adventure.",
+    description:
+      "Experience breathtaking sunrise views from above as you float over the Atlas Mountains and Moroccan landscapes in a hot air balloon adventure.",
+    longDescription:
+      "Rise with the sun for an unforgettable hot air balloon adventure over Morocco's stunning landscapes. Float peacefully above the Atlas Mountains, Berber villages, and desert plains while enjoying panoramic views that stretch to the horizon. This magical experience includes a traditional Berber breakfast served in a nomad tent after landing, complete with fresh bread, honey, and mint tea. Receive a flight certificate as a keepsake of this once-in-a-lifetime adventure.",
     duration: "3-4 hours (1 hour flight)",
     price: "180€",
     groupSize: "2-16 people",
@@ -102,7 +110,7 @@ const activities = [
       "Traditional Berber breakfast in nomad tent",
       "Flight certificate as souvenir",
       "Professional pilot guidance",
-      "Unforgettable photo opportunities"
+      "Unforgettable photo opportunities",
     ],
     includes: [
       "Professional pilot and crew",
@@ -110,20 +118,23 @@ const activities = [
       "1-hour balloon flight",
       "Traditional Berber breakfast",
       "Flight certificate",
-      "Hotel transfers"
+      "Hotel transfers",
     ],
-    image: "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=500&h=300&fit=crop",
     icon: <Waves className="w-6 h-6" />,
     rating: 4.9,
     reviews: 156,
-    location: "Atlas Mountains"
+    location: "Atlas Mountains",
   },
   {
     id: "palmeraie-camel-trek",
     title: "Palmeraie Marrakech Camel Trekking",
     shortTitle: "Camel Trekking",
-    description: "Explore the vast Palmeraie palm oasis on camelback, passing through traditional Berber villages and enjoying the tranquility of this natural desert escape.",
-    longDescription: "Embark on an authentic camel trekking adventure through the Palmeraie, Marrakech's vast palm oasis spanning 54 square miles with hundreds of thousands of palm trees. Travel ancient caravan routes on camelback, passing through traditional Berber villages and lush palm groves. Experience the peaceful rhythm of desert life while enjoying panoramic views of the Atlas Mountains. The journey includes stops for traditional mint tea in Berber tents and opportunities to wear traditional Saharan clothing for authentic photos.",
+    description:
+      "Explore the vast Palmeraie palm oasis on camelback, passing through traditional Berber villages and enjoying the tranquility of this natural desert escape.",
+    longDescription:
+      "Embark on an authentic camel trekking adventure through the Palmeraie, Marrakech's vast palm oasis spanning 54 square miles with hundreds of thousands of palm trees. Travel ancient caravan routes on camelback, passing through traditional Berber villages and lush palm groves. Experience the peaceful rhythm of desert life while enjoying panoramic views of the Atlas Mountains. The journey includes stops for traditional mint tea in Berber tents and opportunities to wear traditional Saharan clothing for authentic photos.",
     duration: "2-3 hours",
     price: "35€",
     groupSize: "2-20 people",
@@ -135,7 +146,7 @@ const activities = [
       "Mint tea break in Berber tent",
       "Traditional Saharan clothing for photos",
       "Atlas Mountain views",
-      "Peaceful desert experience"
+      "Peaceful desert experience",
     ],
     includes: [
       "Experienced camel guide",
@@ -143,20 +154,23 @@ const activities = [
       "Traditional Berber clothing",
       "Mint tea ceremony",
       "Hotel transfers",
-      "Safety equipment"
+      "Safety equipment",
     ],
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=300&fit=crop",
     icon: <Mountain className="w-6 h-6" />,
     rating: 4.6,
     reviews: 223,
-    location: "Palmeraie, Marrakech"
+    location: "Palmeraie, Marrakech",
   },
   {
     id: "paragliding-atlas",
     title: "Paragliding in the Atlas Mountains",
     shortTitle: "Paragliding",
-    description: "Soar above the stunning Atlas Mountains with professional pilots, experiencing the thrill of free flight while enjoying panoramic views of Morocco's diverse landscapes.",
-    longDescription: "Experience the ultimate adrenaline rush with tandem paragliding over the majestic Atlas Mountains. Soar like a bird with certified professional pilots, enjoying 20-25 minutes of pure flight above breathtaking landscapes including the Kik Plateau, Lalla Takerkoust Lake, and traditional Berber villages. This thrilling adventure requires no previous experience - just bring your sense of adventure. The experience includes comprehensive safety briefing, top-quality equipment, and professional photos and videos to capture your aerial adventure.",
+    description:
+      "Soar above the stunning Atlas Mountains with professional pilots, experiencing the thrill of free flight while enjoying panoramic views of Morocco's diverse landscapes.",
+    longDescription:
+      "Experience the ultimate adrenaline rush with tandem paragliding over the majestic Atlas Mountains. Soar like a bird with certified professional pilots, enjoying 20-25 minutes of pure flight above breathtaking landscapes including the Kik Plateau, Lalla Takerkoust Lake, and traditional Berber villages. This thrilling adventure requires no previous experience - just bring your sense of adventure. The experience includes comprehensive safety briefing, top-quality equipment, and professional photos and videos to capture your aerial adventure.",
     duration: "3-4 hours (20-25 min flight)",
     price: "120€",
     groupSize: "1-8 people",
@@ -168,7 +182,7 @@ const activities = [
       "Professional certified pilots",
       "No experience required",
       "Professional photos and videos included",
-      "Safety equipment and comprehensive briefing"
+      "Safety equipment and comprehensive briefing",
     ],
     includes: [
       "Certified professional pilot",
@@ -176,17 +190,24 @@ const activities = [
       "Comprehensive safety briefing",
       "Photos and videos of your flight",
       "Hotel transfers",
-      "Traditional mint tea after landing"
+      "Traditional mint tea after landing",
     ],
-    image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=500&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=500&h=300&fit=crop",
     icon: <Wind className="w-6 h-6" />,
     rating: 4.8,
     reviews: 89,
-    location: "Atlas Mountains"
-  }
+    location: "Atlas Mountains",
+  },
 ];
 
-const categories = ["All", "Culinary", "Cultural", "Adventure", "Extreme Sports"];
+const categories = [
+  "All",
+  "Culinary",
+  "Cultural",
+  "Adventure",
+  "Extreme Sports",
+];
 const difficulties = ["All", "Easy", "Beginner", "Moderate"];
 
 export default function Activities() {
@@ -195,34 +216,47 @@ export default function Activities() {
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
   const [selectedActivity, setSelectedActivity] = useState(null);
 
-  const filteredActivities = activities.filter(activity => {
-    const categoryMatch = selectedCategory === "All" || activity.category === selectedCategory;
-    const difficultyMatch = selectedDifficulty === "All" || activity.difficulty === selectedDifficulty;
+  const filteredActivities = activities.filter((activity) => {
+    const categoryMatch =
+      selectedCategory === "All" || activity.category === selectedCategory;
+    const difficultyMatch =
+      selectedDifficulty === "All" ||
+      activity.difficulty === selectedDifficulty;
     return categoryMatch && difficultyMatch;
   });
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case "Culinary": return <ChefHat className="w-5 h-5" />;
-      case "Cultural": return <Flower2 className="w-5 h-5" />;
-      case "Adventure": return <Mountain className="w-5 h-5" />;
-      case "Extreme Sports": return <Wind className="w-5 h-5" />;
-      default: return <Star className="w-5 h-5" />;
+      case "Culinary":
+        return <ChefHat className="w-5 h-5" />;
+      case "Cultural":
+        return <Flower2 className="w-5 h-5" />;
+      case "Adventure":
+        return <Mountain className="w-5 h-5" />;
+      case "Extreme Sports":
+        return <Wind className="w-5 h-5" />;
+      default:
+        return <Star className="w-5 h-5" />;
     }
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Easy": return "text-green-600 bg-green-100";
-      case "Beginner": return "text-blue-600 bg-blue-100";
-      case "Moderate": return "text-orange-600 bg-orange-100";
-      case "Advanced": return "text-red-600 bg-red-100";
-      default: return "text-gray-600 bg-gray-100";
+      case "Easy":
+        return "text-green-600 bg-green-100";
+      case "Beginner":
+        return "text-blue-600 bg-blue-100";
+      case "Moderate":
+        return "text-orange-600 bg-orange-100";
+      case "Advanced":
+        return "text-red-600 bg-red-100";
+      default:
+        return "text-gray-600 bg-gray-100";
     }
   };
 
   if (selectedActivity) {
-    const activity = activities.find(a => a.id === selectedActivity);
+    const activity = activities.find((a) => a.id === selectedActivity);
     return (
       <div className="min-h-screen bg-white">
         {/* Navigation */}
@@ -232,20 +266,29 @@ export default function Activities() {
               MAROC
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+              <a
+                href="/"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
                 Home
               </a>
               <a href="#activities" className="text-morocco-orange font-medium">
                 Activities
               </a>
-              <a href="/#destinations" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+              <a
+                href="/#destinations"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
                 Destinations
               </a>
-              <a href="/#contact" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+              <a
+                href="/#contact"
+                className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+              >
                 Contact
               </a>
             </div>
-            <button 
+            <button
               onClick={() => setSelectedActivity(null)}
               className="bg-gradient-to-r from-morocco-orange to-morocco-orange-dark text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium"
             >
@@ -257,17 +300,17 @@ export default function Activities() {
         {/* Activity Detail */}
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
-            <button 
+            <button
               onClick={() => setSelectedActivity(null)}
               className="flex items-center text-morocco-orange hover:text-morocco-orange-dark mb-6 transition-colors"
             >
               ← Back to Activities
             </button>
-            
+
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="relative h-96">
-                <img 
-                  src={activity?.image} 
+                <img
+                  src={activity?.image}
                   alt={activity?.title}
                   className="w-full h-full object-cover"
                 />
@@ -275,10 +318,14 @@ export default function Activities() {
                 <div className="absolute bottom-6 left-6 text-white">
                   <h1 className="text-4xl font-bold mb-2">{activity?.title}</h1>
                   <div className="flex items-center space-x-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getCategoryIcon(activity?.category)} bg-white/20 text-white`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold ${getCategoryIcon(activity?.category)} bg-white/20 text-white`}
+                    >
                       {activity?.category}
                     </span>
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getDifficultyColor(activity?.difficulty)}`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold ${getDifficultyColor(activity?.difficulty)}`}
+                    >
                       {activity?.difficulty}
                     </span>
                   </div>
@@ -288,10 +335,16 @@ export default function Activities() {
               <div className="p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="lg:col-span-2">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">About This Experience</h2>
-                    <p className="text-gray-600 leading-relaxed mb-6">{activity?.longDescription}</p>
-                    
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">Highlights</h3>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                      About This Experience
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {activity?.longDescription}
+                    </p>
+
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">
+                      Highlights
+                    </h3>
                     <ul className="space-y-2 mb-6">
                       {activity?.highlights.map((highlight, index) => (
                         <li key={index} className="flex items-start space-x-2">
@@ -301,7 +354,9 @@ export default function Activities() {
                       ))}
                     </ul>
 
-                    <h3 className="text-xl font-bold text-gray-800 mb-4">What's Included</h3>
+                    <h3 className="text-xl font-bold text-gray-800 mb-4">
+                      What's Included
+                    </h3>
                     <ul className="space-y-2">
                       {activity?.includes.map((item, index) => (
                         <li key={index} className="flex items-start space-x-2">
@@ -315,7 +370,9 @@ export default function Activities() {
                   <div className="lg:col-span-1">
                     <div className="bg-gray-50 rounded-xl p-6 sticky top-24">
                       <div className="text-center mb-6">
-                        <div className="text-3xl font-bold text-morocco-orange mb-2">{activity?.price}</div>
+                        <div className="text-3xl font-bold text-morocco-orange mb-2">
+                          {activity?.price}
+                        </div>
                         <div className="text-gray-600">per person</div>
                       </div>
 
@@ -325,28 +382,36 @@ export default function Activities() {
                             <Clock className="w-5 h-5 text-gray-500" />
                             <span className="text-gray-600">Duration</span>
                           </div>
-                          <span className="font-semibold">{activity?.duration}</span>
+                          <span className="font-semibold">
+                            {activity?.duration}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <Users className="w-5 h-5 text-gray-500" />
                             <span className="text-gray-600">Group Size</span>
                           </div>
-                          <span className="font-semibold">{activity?.groupSize}</span>
+                          <span className="font-semibold">
+                            {activity?.groupSize}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <MapPin className="w-5 h-5 text-gray-500" />
                             <span className="text-gray-600">Location</span>
                           </div>
-                          <span className="font-semibold">{activity?.location}</span>
+                          <span className="font-semibold">
+                            {activity?.location}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
                             <Star className="w-5 h-5 text-gray-500" />
                             <span className="text-gray-600">Rating</span>
                           </div>
-                          <span className="font-semibold">{activity?.rating} ({activity?.reviews} reviews)</span>
+                          <span className="font-semibold">
+                            {activity?.rating} ({activity?.reviews} reviews)
+                          </span>
                         </div>
                       </div>
 
@@ -355,8 +420,10 @@ export default function Activities() {
                           <Calendar className="w-5 h-5 inline mr-2" />
                           Book Now
                         </button>
-                        <button 
-                          onClick={() => quickBookingViaWhatsApp(activity?.title)}
+                        <button
+                          onClick={() =>
+                            quickBookingViaWhatsApp(activity?.title)
+                          }
                           className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 font-semibold hover:shadow-lg transform hover:scale-105"
                         >
                           <MessageCircle className="w-5 h-5 inline mr-2" />
@@ -385,16 +452,25 @@ export default function Activities() {
             MAROC
           </div>
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+            <a
+              href="/"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
               Home
             </a>
             <a href="#activities" className="text-morocco-orange font-medium">
               Activities
             </a>
-            <a href="/#destinations" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+            <a
+              href="/#destinations"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
               Destinations
             </a>
-            <a href="/#contact" className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium">
+            <a
+              href="/#contact"
+              className="text-gray-700 hover:text-morocco-orange transition-all duration-300 font-medium"
+            >
               Contact
             </a>
           </div>
@@ -415,7 +491,8 @@ export default function Activities() {
               Moroccan Activities
             </h1>
             <p className="text-xl mb-8 text-white/90">
-              Discover authentic experiences that showcase the best of Morocco's culture, adventure, and natural beauty
+              Discover authentic experiences that showcase the best of Morocco's
+              culture, adventure, and natural beauty
             </p>
           </div>
         </div>
@@ -427,32 +504,38 @@ export default function Activities() {
           <div className="flex flex-col md:flex-row gap-6 items-center justify-between">
             <div className="flex items-center space-x-2">
               <Filter className="w-5 h-5 text-gray-600" />
-              <span className="font-semibold text-gray-700">Filter Activities:</span>
+              <span className="font-semibold text-gray-700">
+                Filter Activities:
+              </span>
             </div>
-            
+
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-gray-600">Category:</span>
-                <select 
+                <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-morocco-orange"
                 >
-                  {categories.map(category => (
-                    <option key={category} value={category}>{category}</option>
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
                   ))}
                 </select>
               </div>
-              
+
               <div className="flex items-center space-x-2">
                 <span className="text-sm text-gray-600">Difficulty:</span>
-                <select 
+                <select
                   value={selectedDifficulty}
                   onChange={(e) => setSelectedDifficulty(e.target.value)}
                   className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-morocco-orange"
                 >
-                  {difficulties.map(difficulty => (
-                    <option key={difficulty} value={difficulty}>{difficulty}</option>
+                  {difficulties.map((difficulty) => (
+                    <option key={difficulty} value={difficulty}>
+                      {difficulty}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -476,19 +559,23 @@ export default function Activities() {
                 onClick={() => setSelectedActivity(activity.id)}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={activity.image} 
+                  <img
+                    src={activity.image}
                     alt={activity.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute top-4 left-4 flex space-x-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center space-x-1 bg-white/90 text-gray-800`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold flex items-center space-x-1 bg-white/90 text-gray-800`}
+                    >
                       {getCategoryIcon(activity.category)}
                       <span>{activity.category}</span>
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(activity.difficulty)}`}>
+                    <span
+                      className={`px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyColor(activity.difficulty)}`}
+                    >
                       {activity.difficulty}
                     </span>
                   </div>
@@ -501,7 +588,7 @@ export default function Activities() {
                   <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                     {activity.description}
                   </p>
-                  
+
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center text-gray-600 text-sm">
                       <Clock className="w-4 h-4 mr-2" />
@@ -536,7 +623,7 @@ export default function Activities() {
                       {activity.price}
                     </span>
                     <div className="flex gap-2">
-                      <button 
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedActivity(activity.id);
@@ -572,7 +659,8 @@ export default function Activities() {
             Ready for Your Moroccan Adventure?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Book your favorite activities and create unforgettable memories in Morocco
+            Book your favorite activities and create unforgettable memories in
+            Morocco
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-morocco-orange px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
