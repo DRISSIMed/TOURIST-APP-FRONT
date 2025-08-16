@@ -12,6 +12,7 @@ import BookingDetail from "./pages/BookingDetail";
 import Activities from "./pages/Activities";
 import Circuits from "./pages/Circuits";
 import Excursions from "./pages/Excursions";
+import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/activities" element={<Activities />} />
             <Route path="/circuits" element={<Circuits />} />
             <Route path="/excursions" element={<Excursions />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/booking/:tourId" element={<BookingDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
