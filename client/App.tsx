@@ -11,6 +11,7 @@ import Index from "./pages/Index";
 import BookingDetail from "./pages/BookingDetail";
 import Activities from "./pages/Activities";
 import Circuits from "./pages/Circuits";
+import Excursions from "./pages/Excursions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
